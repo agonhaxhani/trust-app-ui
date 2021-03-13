@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.wrapper {
+  padding:30px;
+  width: 100%;
+  min-height: calc(100% - 60px);
+}

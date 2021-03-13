@@ -1,0 +1,87 @@
+@import './theme';
+
+*{
+  box-sizing: border-box;
+}
+
+p, a {
+  margin: 0;
+  color: #666;
+  line-height: 1.4;
+}
+
+p {
+  font-size: 14px;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex: 1;
+  min-height: 100%;
+  min-width: 100%;
+  background-color: #eee;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+button, button:focus {
+  outline: none;
+  border: none;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.g {
+  &-snackbar-success .mat-button-wrapper {
+    color: $primary;
+  }
+
+  &-snackbar-error .mat-button-wrapper {
+    color: $warn;
+  }
+
+  &-search {
+    position: relative;
+
+    input {
+      border-radius: 3px;
+      border: none;
+      background-color: #eee;
+      font-size: 12px;
+      outline: none;
+      padding: 10px 5px;
+
+      &:focus {
+        border: 1px solid cornflowerblue;
+      }
+    }
+
+    button {
+      background: none;
+      outline: none;
+      position: absolute;
+      right: 0;
+      top: 4px;
+      cursor: pointer;
+
+      mat-icon {
+        color: #666;
+      }
+    }
+  }
+}
+
+.wrapper {
+  width: 1170px;
+  margin:0 auto;
+}

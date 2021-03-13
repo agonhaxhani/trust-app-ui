@@ -1,0 +1,61 @@
+@import '~src/scss/theme';
+
+:host {
+  width: 100%;
+  z-index: 99;
+}
+
+p {
+  color: #fff;
+}
+
+.footer {
+  width: 100%;
+  background-color: #333;
+  
+  .top {
+    display: flex;
+
+    .logo {
+      img {
+        width: 180px;
+      }
+    }
+
+    a {
+        vertical-align: top;
+
+      * {
+        vertical-align: top;
+      }
+
+      img {
+        width: 50px;
+      }
+
+      span {
+        font-size: 30px;
+        padding: 10px;
+        color: #fff;
+      }
+    }
+  }
+
+  .top-content {
+    display: flex;
+    padding: 50px 0 10px 0;
+    border-bottom: 1px solid white;
+
+    .logo, .images {
+      width: 50%;
+    }
+
+    .images {
+      text-align: right;
+    }
+  }
+
+  .bottom {
+    padding: 15px 30px;
+  }
+}

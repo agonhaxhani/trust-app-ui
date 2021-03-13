@@ -1,0 +1,24 @@
+<div class='login-form'>
+  <div class='form-wrap'>
+    <div class='img'>
+      <img src='{{logoUrl}}' />
+    </div>
+    <form [formGroup]='formGroup' (submit)='login()'>
+      <div class='form-input'>
+        <mat-form-field>
+          <mat-label>Email Adresa</mat-label>
+          <input matInput formControlName='username' placeholder='Email Adresa ose Username'>
+        </mat-form-field>
+      </div>
+      <div class='form-input'>
+        <mat-form-field>
+          <mat-label>Fjalekalimi</mat-label>
+          <input matInput type='password' formControlName='password' placeholder='Fjalekalimi' />
+        </mat-form-field>
+      </div>
+      <div class='button'>
+        <app-button-spinner text="Kycu" color="primary" [loading]="loading"></app-button-spinner>
+      </div>
+    </form>
+  </div>
+</div>

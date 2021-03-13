@@ -1,0 +1,22 @@
+.form  {
+  &-input {
+    width: 100%;
+
+    mat-form-field {
+      width: 100%;
+    }
+  }
+
+  .button {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  textarea {
+    height: 130px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 10px !important;
+    resize: none;
+  }
+}

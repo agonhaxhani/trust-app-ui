@@ -1,0 +1,44 @@
+@import "theme";
+.table {
+  width: 100%;
+
+  table {
+    width: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid #dbdbdb;
+
+    tr:last-of-type {
+      border: none;
+    }
+
+    thead {
+      background-color: $primary !important;
+
+      th {
+        color: white !important;
+      }
+    }
+  }
+}
+
+.table-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+
+  .title {
+    display: flex;
+    align-items: center;
+  }
+
+  p, .mat-body p, .mat-body-1 p, .mat-typography p {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}

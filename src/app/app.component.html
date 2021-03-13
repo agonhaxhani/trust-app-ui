@@ -1,0 +1,5 @@
+<div class="return-book" *ngIf="daysLeft <= 3">
+  <p *ngIf="daysLeft >= 0">Kane mbetur edhe {{daysLeft}} dite per t'a permbushur afatin per rikthimin e librit {{bookToReturn.name}} !</p>
+  <p *ngIf="daysLeft <= 0">Kane kaluar {{daysLeft}} dite per nga afati per rikthimin e librit {{bookToReturn.name}} !</p>
+</div>
+<router-outlet></router-outlet>

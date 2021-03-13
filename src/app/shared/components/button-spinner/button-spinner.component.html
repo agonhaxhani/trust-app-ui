@@ -1,0 +1,4 @@
+<button mat-raised-button [color]="color ? color : 'primary'" [disabled]="loading">
+  <mat-spinner *ngIf="loading" [diameter]="30" [strokeWidth]="3"></mat-spinner>
+  <span *ngIf="loading == false">{{text}}</span>
+</button>

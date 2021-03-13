@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+
+button {
+  min-height: 100%;
+}
+
+::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+  width: 30px;
+  stroke: #fff;
+}
+

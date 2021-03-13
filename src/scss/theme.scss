@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$akropoli-pr-ui-primary: mat-palette($mat-green, 800);
+$akropoli-pr-ui-accent: mat-palette($mat-orange, 800);
+$akropoli-pr-ui-warn: mat-palette($mat-red);
+
+$akropoli-pr-ui-theme: mat-light-theme($akropoli-pr-ui-primary, $akropoli-pr-ui-accent, $akropoli-pr-ui-warn);
+
+@include angular-material-theme($akropoli-pr-ui-theme);
+
+$primary: #007d58;
+$secondary: #e4a025;
+$warn: red;
+$orange: #ff9800;
+
