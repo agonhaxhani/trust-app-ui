@@ -1,0 +1,27 @@
+<div class="home-plc">
+    <div class="background-image">
+        <div class="image">
+            <div class="shadow"></div>
+            <app-home-banner-titles></app-home-banner-titles>
+        </div>
+    </div>
+    <div class="slider">
+        <p class="title">Objekte ne Qira</p>
+
+        <carousel style="height:520px" class="carousel" [autoplay]="true" [loop]="true" [cellsToScroll]="32" [cellsToShow]="3" [autoplayInterval]="3000"> 
+            <div class="carousel-cell" *ngFor="let x of [1,2,3,4,5,6,7]">
+                <app-product-card [product]="productModel"></app-product-card>
+            </div>
+        </carousel>
+    </div>
+
+    <div class="slider">
+        <p class="title">Objekte ne Shitje</p>
+        
+        <carousel style="height:520px" class="carousel" [autoplay]="true" [loop]="true" [cellsToScroll]="32" [cellsToShow]="3" [autoplayInterval]="3000"> 
+            <div class="carousel-cell" *ngFor="let x of [1,2,3,4,5,6,7]">
+                <app-product-card [product]="productModel"></app-product-card>
+            </div>
+        </carousel>
+    </div>
+</div>

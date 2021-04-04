@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GuestComponent } from './guest.component';
-import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { GuestRoutingModule } from './guest-routing.module';
 import { AuthenticationService } from '../../shared/services/auth/authentication.service';
@@ -13,16 +12,28 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { ButtonSpinnerModule } from "../../shared/components/button-spinner/button-spinner.module";
 import { AboutUsComponent } from './about-us/about-us.component';
-import { HeaderLoggedComponent } from './header-logged/header-logged.component';
+import { HeaderNotLogged } from './header-logged/header-not-logged.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { LoginComponent } from './login/login.component';
+import { MapComponent } from './map/map.component';
+import { HomeComponent } from './home/home.component';
+import { HomeBannerTitlesComponent } from './home/home-banner-titles/home-banner-titles.component';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   declarations: [
     GuestComponent,
     LoginComponent,
     AboutUsComponent,
-    HeaderLoggedComponent,
-    FooterComponent
+    HeaderNotLogged,
+    FooterComponent,
+    ContactUsComponent,
+    MapComponent,
+    HomeComponent,
+    HomeBannerTitlesComponent,
+    ProductCardComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +44,8 @@ import { FooterComponent } from './footer/footer.component';
     MatInputModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    ButtonSpinnerModule
+    ButtonSpinnerModule,
+    IvyCarouselModule
   ],
   providers: [
     AuthenticationService,

@@ -5,11 +5,11 @@ import {IMAGEURLS} from '../../../shared/constants/GeneralConstant';
 import {TokenService} from '../../../shared/services/auth/token.service';
 
 @Component({
-  selector: 'app-header-logged',
-  templateUrl: './header-logged.component.html',
-  styleUrls: ['./header-logged.component.scss']
+  selector: 'app-header-not-logged',
+  templateUrl: './header-not-logged.component.html',
+  styleUrls: ['./header-not-logged.component.scss']
 })
-export class HeaderLoggedComponent implements OnInit {
+export class HeaderNotLogged implements OnInit {
   logoUrl = IMAGEURLS.LOGO;
   avatarUrl = IMAGEURLS.AVATAR;
   tokenData: any;

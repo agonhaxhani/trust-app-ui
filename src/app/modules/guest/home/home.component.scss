@@ -1,0 +1,49 @@
+:host {
+    display: flex;
+    flex: 1;
+}
+.home-plc {
+    width: 100%;
+}
+
+.image {
+    background-image:url("http://demo-install.wpestate.org/wp-content/uploads/2020/05/home_bg_optimized.jpg");
+    height:900px;
+    margin-top: -100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.slider {
+    padding: 30px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    width: 1300px;
+    margin: 0 auto;
+
+    &:last-of-type {
+        padding: 0;
+    }
+
+    .title {
+        font-weight: 500;
+        font-size: 20px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .carousel {
+        width: 100%;
+    }
+}
