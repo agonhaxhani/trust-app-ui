@@ -5,6 +5,7 @@ import {GuestComponent} from './guest.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HomeComponent } from './home/home.component';
+import { ProductListComponent } from '../product-list/product-list.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent
+      },
+      {
+        path: 'product/list',
+        component: ProductListComponent
       }
     ]
   },

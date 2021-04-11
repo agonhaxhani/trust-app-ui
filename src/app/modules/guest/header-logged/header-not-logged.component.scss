@@ -2,12 +2,12 @@
 
 :host {
   width: 100%;
-  z-index: 99;
+  z-index: 99999;
   position: fixed;
 }
 
 .header-fixed {
-  z-index: 9999;
+  z-index: 99999;
   display: flex;
   justify-content: space-between;
   padding: 0 100px;
@@ -37,7 +37,8 @@ a {
   align-items: center;
 
   img {
-    max-width: 150px;
+    max-width: 140px;
+    min-width: 140px;
   }
 }
 

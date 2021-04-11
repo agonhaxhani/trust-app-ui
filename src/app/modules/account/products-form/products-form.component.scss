@@ -1,0 +1,14 @@
+.inputs-plc {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+.buttons {
+    text-align: right;
+    width: 500px;
+
+    button:last-of-type {
+        margin-left: 10px;
+    }
+}

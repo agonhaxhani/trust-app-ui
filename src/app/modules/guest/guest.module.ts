@@ -20,7 +20,7 @@ import { MapComponent } from './map/map.component';
 import { HomeComponent } from './home/home.component';
 import { HomeBannerTitlesComponent } from './home/home-banner-titles/home-banner-titles.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
-import { ProductCardComponent } from './product-card/product-card.component';
+import { ProductListModule } from '../product-list/product-list.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,6 @@ import { ProductCardComponent } from './product-card/product-card.component';
     MapComponent,
     HomeComponent,
     HomeBannerTitlesComponent,
-    ProductCardComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +44,8 @@ import { ProductCardComponent } from './product-card/product-card.component';
     MatButtonModule,
     MatProgressSpinnerModule,
     ButtonSpinnerModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    ProductListModule
   ],
   providers: [
     AuthenticationService,

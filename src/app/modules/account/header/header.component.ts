@@ -26,5 +26,4 @@ export class HeaderComponent implements OnInit {
     localStorage.clear();
     this.router.navigateByUrl(RouterUrls.GUEST.BASE_MODULE);
   }
-
 }
