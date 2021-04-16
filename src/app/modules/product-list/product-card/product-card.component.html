@@ -1,19 +1,19 @@
-<div class="product-card">
+<div class="product-card" *ngIf="product">
     <div class="wrapper">
         <div class="container">
-          <div class="top" [ngStyle]="{ 'background-image': 'url(' + product.imageUrl + ')'}"></div>
+          <div class="top" [ngStyle]="{ 'background-image': 'url(' + product.image_url + ')'}"></div>
           <div class="bottom">
             <div class="left">
               <div class="details">
-                <h3>{{product.name}}</h3>
-                <p>£250</p>
+                <h3>{{product.title}}</h3>
+                <p>£{{product.price}}</p>
               </div>
               <!-- <div class="buy"><i class="material-icons">add_shopping_cart</i></div> -->
             </div>
             <div class="right">
               <div class="done"><i class="material-icons">done</i></div>
               <div class="details">
-                <h1>{{product.name}}</h1>
+                <h1>{{product.title}}</h1>
                 <p>Added to your cart</p>
               </div>
               <div class="remove"><i class="material-icons">clear</i></div>
@@ -25,36 +25,18 @@
           <div class="contents">
             <table>
               <tr>
-                <th>Width</th>
-                <th>Height</th>
+                <th>Rooms</th>
+                <th>M2</th>
               </tr>
               <tr>
-                <td>3000mm</td>
-                <td>4000mm</td>
+                <td>{{product.rooms}}</td>
+                <td>{{product.m2}}</td>
               </tr>
               <tr>
-                <th>Something</th>
-                <th>Something</th>
+                <th>Adresa</th>
               </tr>
               <tr>
-                <td>200mm</td>
-                <td>200mm</td>
-              </tr>
-              <tr>
-                <th>Something</th>
-                <th>Something</th>
-              </tr>
-              <tr>
-                <td>200mm</td>
-                <td>200mm</td>
-              </tr>
-              <tr>
-                <th>Something</th>
-                <th>Something</th>
-              </tr>
-              <tr>
-                <td>200mm</td>
-                <td>200mm</td>
+                <td>{{product.address}}</td>
               </tr>
             </table>
           </div>

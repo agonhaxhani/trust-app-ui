@@ -21,6 +21,8 @@ import { HomeComponent } from './home/home.component';
 import { HomeBannerTitlesComponent } from './home/home-banner-titles/home-banner-titles.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { ProductListModule } from '../product-list/product-list.module';
+import { ProductsComponent } from './products/products.component';
+import { ProductService } from 'src/app/shared/services/product.service';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { ProductListModule } from '../product-list/product-list.module';
     MapComponent,
     HomeComponent,
     HomeBannerTitlesComponent,
+    ProductsComponent,
   ],
   imports: [
     CommonModule,
@@ -49,7 +52,8 @@ import { ProductListModule } from '../product-list/product-list.module';
   ],
   providers: [
     AuthenticationService,
-    TokenService
+    TokenService,
+    ProductService
   ]
 })
 export class GuestModule {

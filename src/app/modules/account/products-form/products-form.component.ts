@@ -22,6 +22,7 @@ export class ProductsFormComponent implements OnInit {
   initform() {
     this.formGroup = new FormGroup({
       imgUrl: new FormControl('', Validators.required),
+      title: new FormControl('', Validators.required),
       price: new FormControl('', Validators.required),
       roomsNr: new FormControl('', Validators.required),
       address: new FormControl('', Validators.required),
@@ -35,6 +36,7 @@ export class ProductsFormComponent implements OnInit {
 
     const product = {
       image_url: value.imgUrl,
+      title: value.title.toString(),
       m2: value.m2.toString(),
       price: value.price.toString(),
       rooms: value.roomsNr.toString(),
@@ -42,7 +44,7 @@ export class ProductsFormComponent implements OnInit {
       address: value.address,
       zip_code: "",
     }
-    console.log(this.formGroup.value);
+
     this.productService.createProduct(product).subscribe(
       result => {
         this.router.navigateByUrl("/account/products");

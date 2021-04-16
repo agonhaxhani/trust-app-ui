@@ -7,7 +7,7 @@ import { ProductModel } from 'src/app/shared/models/product/product.model';
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit {
-  @Input() product: ProductModel;
+  @Input() product: any;
 
   constructor() { }
 

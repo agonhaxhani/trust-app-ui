@@ -1,5 +1,10 @@
 <form [formGroup]="formGroup" (submit)="formSubmit()">
     <div class="inputs-plc">
+      <mat-form-field class="example-full-width">
+        <mat-label>Titulli</mat-label>
+        <input formControlName="title" matInput placeholder="Titulli">
+      </mat-form-field>
+
         <mat-form-field class="example-full-width">
             <mat-label>URL i fotos</mat-label>
             <input formControlName="imgUrl" matInput placeholder="URL i fotos">
