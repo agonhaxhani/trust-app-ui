@@ -11,7 +11,14 @@ export const RequestUrls = {
       CHANGE_PASSWORD: environment.api + '/account_user/change_password',
     },
     PRODUCT: {
-      BASE_API: environment.api + '/content-manager/collection-types/application::product.product',
+      BASE_API: environment.api + '/products',
+    },
+    PRODUCT_FILES: {
+      BASE_API: environment.api + '/product-files'
+    },
+    FILE: {
+      UPLOAD: environment.api + '/upload',
+      DELETE_FILES: environment.api + '/upload/files',
     },
   },
 };

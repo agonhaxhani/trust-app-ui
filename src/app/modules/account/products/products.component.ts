@@ -15,19 +15,9 @@ export class ProductsComponent implements OnInit {
               private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.getProducts();
   }
 
   addProduct() {
     this.dialog.open(ProductsFormComponent);
   }
-
-  getProducts() {
-      this.productService.getProducts().subscribe(
-        result => {
-          this.products = result.results;
-        }
-      )
-  }
-
 }

@@ -1,14 +1,20 @@
+<div class="image" *ngFor="let file of productFiles; let i = index" (click)="removeImage(file, i)">
+  <i class="material-icons">close</i>
+  <img *ngIf="file && file.fileData && file.fileData.formats && file.fileData.formats.thumbnail" 
+    [src]="file.fileData.formats.thumbnail.url" height="200">
+</div>
+
+<div class="file-uploader-plc">
+  <label class="file-uploader" for="fileUploader">Add Photo</label>
+  <input [multiple]="true" id="fileUploader" hidden type='file' (change)="onSelectFile($event)">
+</div>
+
 <form [formGroup]="formGroup" (submit)="formSubmit()">
     <div class="inputs-plc">
       <mat-form-field class="example-full-width">
         <mat-label>Titulli</mat-label>
         <input formControlName="title" matInput placeholder="Titulli">
       </mat-form-field>
-
-        <mat-form-field class="example-full-width">
-            <mat-label>URL i fotos</mat-label>
-            <input formControlName="imgUrl" matInput placeholder="URL i fotos">
-          </mat-form-field>
 
           <mat-form-field class="example-full-width">
             <mat-label>Cmimi</mat-label>

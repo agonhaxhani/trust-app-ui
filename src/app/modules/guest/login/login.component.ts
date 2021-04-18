@@ -54,7 +54,6 @@ export class LoginComponent implements OnInit {
       )
       .subscribe(
         result => {
-          debugger;
           this.tokenService.saveToken(result.data.token);
           this.router.navigateByUrl('/' + RouterUrls.ACCOUNT.BASE_MODULE);
         },
