@@ -12,7 +12,19 @@ export class ProductService {
     return this.http.post<any>(RequestUrls.ACCOUNT.PRODUCT.BASE_API, productModel);
   }
 
+  updateProduct(productModel: any) {
+    return this.http.put<any>(RequestUrls.ACCOUNT.PRODUCT.BASE_API + `/${productModel.id}`, productModel);
+  }
+
+  deleteProduct(productId: any) {
+    return this.http.delete<any>(RequestUrls.ACCOUNT.PRODUCT.BASE_API + `/${productId}`);
+  }
+
   getProducts() {
     return this.http.get<any>(RequestUrls.ACCOUNT.PRODUCT.BASE_API);
+  }
+
+  getProductDetails(id) {
+    return this.http.get<any>(RequestUrls.ACCOUNT.PRODUCT.BASE_API + `/${id}`);
   }
 }

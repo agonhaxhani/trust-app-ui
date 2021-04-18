@@ -1,49 +1,56 @@
-<div class="image" *ngFor="let file of productFiles; let i = index" (click)="removeImage(file, i)">
-  <i class="material-icons">close</i>
-  <img *ngIf="file && file.fileData && file.fileData.formats && file.fileData.formats.thumbnail" 
-    [src]="file.fileData.formats.thumbnail.url" height="200">
+<div *ngIf="formGroup">
+  <div class="image" *ngFor="let file of productFiles; let i = index" (click)="removeImage(file, i)">
+    <i class="material-icons">close</i>
+    <img *ngIf="file && file.fileData && file.fileData.formats && file.fileData.formats.thumbnail" 
+      [src]="file.fileData.formats.thumbnail.url" height="200">
+  </div>
+  
+  <div class="file-uploader-plc">
+    <label class="file-uploader" for="fileUploader">Add Photo</label>
+    <input [multiple]="true" id="fileUploader" hidden type='file' (change)="onSelectFile($event)">
+  </div>
+  
+  <form [formGroup]="formGroup" (submit)="formSubmit()">
+      <div class="inputs-plc">
+        <mat-form-field class="example-full-width">
+          <mat-label>Titulli</mat-label>
+          <input formControlName="title" matInput placeholder="Titulli">
+        </mat-form-field>
+  
+            <mat-form-field class="example-full-width">
+              <mat-label>Cmimi</mat-label>
+              <input type="number" formControlName="price" matInput placeholder="Cmimi">
+            </mat-form-field>
+  
+            <mat-form-field class="example-full-width">
+              <mat-label>Nr i Dhomave</mat-label>
+              <input type="number" formControlName="roomsNr" matInput placeholder="Nr i Dhomave">
+            </mat-form-field>
+  
+            <mat-form-field class="example-full-width">
+              <mat-label>M2</mat-label>
+              <input type="number" formControlName="m2" matInput placeholder="M2">
+            </mat-form-field>
+  
+            <mat-form-field class="example-full-width">
+              <mat-label>Adresa</mat-label>
+              <input formControlName="address" matInput placeholder="Adresa">
+            </mat-form-field>
+  
+            <mat-form-field class="example-full-width">
+              <mat-label>Pershkrimi</mat-label>
+              <input formControlName="description" matInput placeholder="Pershkrimi">
+            </mat-form-field>
+      </div>
+
+      <div>
+        <button mat-raised-button color='warn' (click)="deleteProduct()">Delete</button>
+      </div>
+      
+      <div class="buttons">
+          <a routerLink="/account/products" type="button" mat-raised-button>Anulo</a>
+          <button mat-raised-button color="primary">Shto</button>
+      </div>
+  </form>
+  
 </div>
-
-<div class="file-uploader-plc">
-  <label class="file-uploader" for="fileUploader">Add Photo</label>
-  <input [multiple]="true" id="fileUploader" hidden type='file' (change)="onSelectFile($event)">
-</div>
-
-<form [formGroup]="formGroup" (submit)="formSubmit()">
-    <div class="inputs-plc">
-      <mat-form-field class="example-full-width">
-        <mat-label>Titulli</mat-label>
-        <input formControlName="title" matInput placeholder="Titulli">
-      </mat-form-field>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>Cmimi</mat-label>
-            <input type="number" formControlName="price" matInput placeholder="Cmimi">
-          </mat-form-field>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>Nr i Dhomave</mat-label>
-            <input type="number" formControlName="roomsNr" matInput placeholder="Nr i Dhomave">
-          </mat-form-field>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>M2</mat-label>
-            <input type="number" formControlName="m2" matInput placeholder="M2">
-          </mat-form-field>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>Adresa</mat-label>
-            <input formControlName="address" matInput placeholder="Adresa">
-          </mat-form-field>
-
-          <mat-form-field class="example-full-width">
-            <mat-label>Pershkrimi</mat-label>
-            <input formControlName="description" matInput placeholder="Pershkrimi">
-          </mat-form-field>
-    </div>
-
-    <div class="buttons">
-        <a routerLink="/account/products" type="button" mat-raised-button>Anulo</a>
-        <button mat-raised-button color="primary">Shto</button>
-    </div>
-</form>

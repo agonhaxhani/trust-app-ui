@@ -22,6 +22,10 @@ const routes: Routes = [
       {
         path: 'products/create',
         component: ProductsFormComponent
+      },
+      {
+        path: 'products/update/:id',
+        component: ProductsFormComponent
       }
     ]
   },

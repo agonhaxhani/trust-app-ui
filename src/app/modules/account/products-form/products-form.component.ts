@@ -15,6 +15,7 @@ export class ProductsFormComponent implements OnInit {
   uploadStorage: any;
   productToSave: any;
   productFiles = [];
+  productId: any;
 
   constructor(private productService: ProductService,
               private activatedRoute: ActivatedRoute,
@@ -23,17 +24,18 @@ export class ProductsFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.initform();
+    this.productId = this.activatedRoute.snapshot.params.id;
+    this.getProductData();
   }
 
   initform() {
     this.formGroup = new FormGroup({
-      title: new FormControl('', Validators.required),
-      price: new FormControl('', Validators.required),
-      roomsNr: new FormControl('', Validators.required),
-      address: new FormControl('', Validators.required),
-      m2: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required),
+      title: new FormControl(this.productToSave ? this.productToSave.title : '', Validators.required),
+      price: new FormControl(this.productToSave ? this.productToSave.price : '', Validators.required),
+      roomsNr: new FormControl(this.productToSave ? this.productToSave.rooms : '', Validators.required),
+      address: new FormControl(this.productToSave ? this.productToSave.address : '', Validators.required),
+      m2: new FormControl(this.productToSave ? this.productToSave.m2 : '', Validators.required),
+      description: new FormControl(this.productToSave ? this.productToSave.description : '', Validators.required),
     });
   }
 
@@ -62,6 +64,18 @@ export class ProductsFormComponent implements OnInit {
       product_files: this.productFiles
     };
 
+    if (this.productId) {
+      this.productToSave.id = this.productId;
+      this.productService.updateProduct(this.productToSave).subscribe(
+        result => {
+          this.router.navigateByUrl('/account/products');
+        }, error => {
+          window.alert('ERROR');
+        }
+      );
+      return;
+    }
+
     this.productService.createProduct(this.productToSave).subscribe(
       result => {
         this.router.navigateByUrl('/account/products');
@@ -72,7 +86,6 @@ export class ProductsFormComponent implements OnInit {
   }
 
   removeImage(productFile, index) {
-    debugger;
     this.fileService.removeFromS3(productFile.fileData).subscribe(
       result => {
         this.fileService.removeFromDb(productFile).subscribe(result2 => {
@@ -102,6 +115,35 @@ export class ProductsFormComponent implements OnInit {
 
     this.fileService.saveToDb(object).subscribe(result => {
       this.productFiles.push(result);
+    })
+  }
+
+
+
+  /////////////// UPDATE PAGE //////////////////////////
+
+  getProductData() {
+    if (!this.productId) {
+      this.initform();
+      return;
+    }
+
+    this.productService.getProductDetails(this.productId).subscribe(result => {
+      this.productToSave = result;
+      this.productFiles = this.productToSave.product_files;
+      this.initform();
+    })
+  }
+
+  deleteProduct() {
+    this.productService.deleteProduct(this.productId).subscribe(result => {
+    
+      this.productFiles.forEach((item, index) => {
+        this.removeImage(item, index);
+      })
+
+    this.router.navigateByUrl("/account/products");
+
     })
   }
 
