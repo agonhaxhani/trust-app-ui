@@ -20,8 +20,11 @@ export class ProductService {
     return this.http.delete<any>(RequestUrls.ACCOUNT.PRODUCT.BASE_API + `/${productId}`);
   }
 
-  getProducts() {
-    return this.http.get<any>(RequestUrls.ACCOUNT.PRODUCT.BASE_API);
+  getProducts(url?: string) {
+    if (!url) {
+      url = RequestUrls.ACCOUNT.PRODUCT.BASE_API;
+    }
+    return this.http.get<any>(url);
   }
 
   getProductDetails(id) {

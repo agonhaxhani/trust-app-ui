@@ -3,12 +3,11 @@
 .inputs-plc {
     display: flex;
     flex-direction: column;
-    width: 500px;
 }
 
 .buttons {
     text-align: right;
-    width: 500px;
+    width: 100%;
 
     button:last-of-type {
         margin-left: 10px;
@@ -69,5 +68,33 @@
       border-radius: 50%;
       color: white;
     }
+  }
+}
+
+.form-placeholder {
+  background-color: white;
+  padding: 30px;
+
+  .map-plc {
+    margin: 30px 0;
+
+    h3 {
+    }
+  }
+}
+
+form {
+  mat-form-field {
+    width: 45%;
+  }
+
+  .two-inputs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .parking {
+    width: 45%;
   }
 }

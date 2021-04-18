@@ -10,6 +10,7 @@ import { ButtonSpinnerModule } from 'src/app/shared/components/button-spinner/bu
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { ProductListComponent } from './product-list.component';
 import { BrowserModule } from '@angular/platform-browser';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BrowserModule } from '@angular/platform-browser';
     MatButtonModule,
     MatProgressSpinnerModule,
     ButtonSpinnerModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    MatIconModule
   ],
   providers: [
   ],

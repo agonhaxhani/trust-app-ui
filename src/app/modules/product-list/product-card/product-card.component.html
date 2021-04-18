@@ -1,17 +1,18 @@
 <div class="product-card" *ngIf="product">
     <div class="wrapper">
         <div class="container">
-          <div class="top" *ngIf="product.product_files && product.product_files.length && product.product_files[0].fileData.formats.small" 
+          <div (click)="navigateToDetails(product.id)" class="top pointer" *ngIf="product.product_files && product.product_files.length && product.product_files[0].fileData.formats.small"
               [ngStyle]="{ 'background-image': 'url(' + product.product_files[0].fileData.formats.small.url + ')'}"></div>
-              
-          <div class="top" *ngIf="product.product_files && product.product_files.length && !product.product_files[0].fileData.formats.small" 
+
+          <div (click)="navigateToDetails(product.id)" class="top pointer" *ngIf="product.product_files && product.product_files.length && !product.product_files[0].fileData.formats.small"
           [ngStyle]="{ 'background-image': 'url(' + product.product_files[0].fileData.formats.thumbnail.url + ')'}"></div>
 
           <div class="bottom">
             <div class="left">
               <div class="details">
-                <h3>{{product.title}}</h3>
-                <p>{{product.price}} €</p>
+                <h3 (click)="navigateToDetails(product.id)" class="pointer">{{product.title}}</h3>
+                <p *ngIf="product.price">{{product.price}} €</p>
+                <p *ngIf="!product.price">--</p>
               </div>
               <!-- <div class="buy"><i class="material-icons">add_shopping_cart</i></div> -->
             </div>

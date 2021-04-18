@@ -50,6 +50,9 @@ import { ProductService } from 'src/app/shared/services/product.service';
     IvyCarouselModule,
     ProductListModule
   ],
+  exports: [
+    MapComponent
+  ],
   providers: [
     AuthenticationService,
     TokenService,

@@ -27,4 +27,18 @@ export class HeaderNotLogged implements OnInit {
     this.router.navigateByUrl(RouterUrls.GUEST.BASE_MODULE);
   }
 
+  routeToDetails(neShitje) {
+    if (neShitje == null) {
+      this.router.navigate(['/product/list']);
+      return;
+    }
+
+    if (neShitje) {
+      this.router.navigate(['/product/list'], {queryParams: {type: 'shitje'}});
+      return;
+    }
+
+    this.router.navigate(['/product/list'], {queryParams: {type: 'qira'}});
+  }
+
 }

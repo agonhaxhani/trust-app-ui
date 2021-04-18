@@ -7,6 +7,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HomeComponent } from './home/home.component';
 import { ProductListComponent } from '../product-list/product-list.component';
 import { ProductsComponent } from './products/products.component';
+import {ProductDetailsComponent} from '../../product-details/product-details.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
       {
         path: 'product/list',
         component: ProductsComponent
+      },
+      {
+        path: 'product/details/:id',
+        component: ProductDetailsComponent
       }
     ]
   },

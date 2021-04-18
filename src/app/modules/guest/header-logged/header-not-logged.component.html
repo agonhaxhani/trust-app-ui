@@ -11,8 +11,9 @@
   <div class="right-side">
     <div class="links">
       <a routerLink="/">Home</a>
-      <a routerLink="/product/list">Ne Qira</a>
-      <a routerLink="/product/list">Ne Shitje</a>
+      <a (click)="routeToDetails(null)">Te Gjitha</a>
+      <a (click)="routeToDetails(false)">Ne Qira</a>
+      <a (click)="routeToDetails(true)">Ne Shitje</a>
       <a routerLink="/contact-us">Kontakti</a>
       <a routerLink="/about-us">Rreth Nesh</a>
     </div>

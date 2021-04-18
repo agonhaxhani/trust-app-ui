@@ -1,0 +1,77 @@
+@import '~src/scss/theme';
+
+:host {
+  display: flex;
+  flex: 1;
+  min-height: 100%;
+}
+
+.product-details {
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+.slider {
+  width: 700px;
+  border-radius: 3px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+::ng-deep {
+  .swiper-button-next, .swiper-button-prev {
+    background-color: rgba(0,0,0,0.7);
+    height: 60px;
+    width: 45px;
+
+    &::after {
+      color: white;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    background: white;
+  }
+}
+
+.details {
+  padding-left: 15px;
+  width: calc(100% - 700px);
+
+  h3 {
+    color: $secondary;
+  }
+
+  .option {
+    margin: 5px 0;
+  }
+
+  .title, .value {
+    font-size: 16px;
+  }
+
+  .title {
+    color: $primary;
+    padding-right: 10px;
+  }
+
+  .value {
+    color: $secondary;
+  }
+}
+.product-title {
+  color: $primary;
+}
+
+.description {
+  h3 {
+    color: $secondary;
+  }
+}

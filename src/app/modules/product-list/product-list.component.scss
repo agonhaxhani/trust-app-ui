@@ -1,40 +1,75 @@
 :host {
-    display: flex;
-    flex: 1;
+  display: flex;
+  flex: 1;
 }
 
 .wrapper {
-    width: 1200px;
+  width: 1200px;
+  background-color: white;
+  margin-top: 30px;
 }
 
 .card-list {
-    width: 100%;
+  width: 100%;
 }
 
 .card {
-    display: inline-block;
+  display: inline-block;
 }
 
 ::ng-deep {
-    .product-card {
-        // height: 370px !important;
+  .product-card {
+    // height: 370px !important;
 
-        .wrapper {
-            width: 400px !important;
-            height: 316px !important;
-        }
-
-        .details {
-            display: flex;
-            justify-content: space-between;
-            width: 100% !important;
-            height: 100%;
-            align-items: center;
-        }
-
-        h3 {
-            font-size: 14px;
-            margin: 5px 0;
-        }
+    .wrapper {
+      width: 400px !important;
+      height: 316px !important;
     }
+
+    .details {
+      display: flex;
+      justify-content: space-between;
+      width: 100% !important;
+      height: 100%;
+      align-items: center;
+    }
+
+    h3 {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+  }
 }
+
+.filters {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #999;
+  border-radius: 3px;
+
+  .button {
+    margin-top: 29px;
+  }
+
+  .filter-title {
+    font-size: 16px;
+  }
+
+  .filter {
+    width: 24.5%;
+    padding: 5px;
+  }
+
+  input {
+    width: 100%;
+    height: 35px;
+    padding: 5px;
+    border: 1px solid #999;
+    border-radius: 3px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+

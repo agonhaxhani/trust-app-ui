@@ -1,0 +1,88 @@
+<div class="wrapper">
+  <div class="product-details" *ngIf="product">
+
+    <button [routerLink]="'/account/products/update/' + product.id" type="button" style="float:right; cursor: pointer"
+            color="accent" mat-raised-button>Edito</button>
+
+    <h2 class="mt-0 product-title">{{product.title}}</h2>
+
+    <div class="slider-details d-flex">
+      <div class="slider" *ngIf="product && product.product_files">
+        <swiper [config]="config">
+          <div class="swiper-wrapper">
+            <div *ngFor="let image of product.product_files" class="swiper-slide"><img [src]="image.fileData.formats.large.url" alt="img 1"></div>
+          </div>
+
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </swiper>
+      </div>
+
+      <div class="details">
+        <h3 class="mt-0">Detajet e Produktit</h3>
+
+        <div class="options">
+          <div class="option d-flex">
+            <p class="title">Cmimi:</p>
+            <p class="value" *ngIf="product.price">{{product.price}}</p>
+            <p class="value" *ngIf="!product.price">Me Marreveshje</p>
+          </div>
+
+          <div class="option d-flex">
+            <p class="title">Lloji:</p>
+            <p class="value">Ne {{product.type | titlecase}}</p>
+          </div>
+
+          <div class="option d-flex">
+            <p class="title">Nr i Dhomave:</p>
+            <p class="value">{{product.rooms}}</p>
+          </div>
+
+          <div class="option d-flex">
+            <p class="title">Nr i Banjove:</p>
+            <p class="value">{{product.bathroomNr}}</p>
+          </div>
+
+          <div class="option d-flex">
+            <p class="title">Nr i Depove:</p>
+            <p class="value">{{product.storageNr}}</p>
+          </div>
+
+          <div class="option d-flex">
+            <p class="title">Nr i Ballkoneve:</p>
+            <p class="value">{{product.balconyNr}}</p>
+          </div>
+
+          <div class="option d-flex">
+            <p class="title">Metra Katrore:</p>
+            <p class="value">{{product.m2}}</p>
+          </div>
+
+          <div class="option d-flex">
+            <p class="title">Adresa:</p>
+            <p class="value">{{product.address}}</p>
+          </div>
+
+          <div class="option d-flex">
+            <p class="title">Parking:</p>
+            <p class="value">
+              <mat-icon *ngIf="product.parking" class="material-icons-outlined">check_circle</mat-icon>
+              <mat-icon *ngIf="!product.parking" class="material-icons-outlined">cancel</mat-icon>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="description">
+      <h3>Pershkrimi</h3>
+      <p>{{product.description}}</p>
+    </div>
+
+    <app-map [latitude]="product.productLatitude" [longitude]="product.productLongitude"></app-map>
+  </div>
+</div>
