@@ -3,24 +3,38 @@
         <div class="image">
             <div class="shadow"></div>
             <app-home-banner-titles></app-home-banner-titles>
+
+          <app-filters></app-filters>
+
         </div>
     </div>
-    <div class="slider">
+    <div class="slider" *ngIf="rentProducts.length">
         <p class="title">Objekte ne Qira</p>
 
-        <carousel style="height:520px" class="carousel" [autoplay]="true" [loop]="true" [cellsToScroll]="32" [cellsToShow]="3" [autoplayInterval]="3000"> 
-            <div class="carousel-cell" *ngFor="let x of [1,2,3,4,5,6,7]">
-                <app-product-card [product]="productModel"></app-product-card>
+        <carousel style="height:320px" class="carousel" [autoplay]="true" [loop]="true" [cellsToScroll]="32" [cellsToShow]="3" [autoplayInterval]="3000">
+            <div class="carousel-cell" *ngFor="let rentProd of rentProducts">
+                <app-product-card [product]="rentProd"></app-product-card>
+            </div>
+          <div class="carousel-cell" *ngFor="let rentProd of rentProducts">
+                <app-product-card [product]="rentProd"></app-product-card>
+            </div>  <div class="carousel-cell" *ngFor="let rentProd of rentProducts">
+                <app-product-card [product]="rentProd"></app-product-card>
+            </div>  <div class="carousel-cell" *ngFor="let rentProd of rentProducts">
+                <app-product-card [product]="rentProd"></app-product-card>
             </div>
         </carousel>
     </div>
 
-    <div class="slider">
+    <div class="slider" *ngIf="sellingProducts.length">
         <p class="title">Objekte ne Shitje</p>
-        
-        <carousel style="height:520px" class="carousel" [autoplay]="true" [loop]="true" [cellsToScroll]="32" [cellsToShow]="3" [autoplayInterval]="3000"> 
-            <div class="carousel-cell" *ngFor="let x of [1,2,3,4,5,6,7]">
-                <app-product-card [product]="productModel"></app-product-card>
+
+        <carousel style="height:320px" class="carousel" [autoplay]="true" [loop]="true" [cellsToScroll]="32" [cellsToShow]="3" [autoplayInterval]="3000">
+            <div class="carousel-cell" *ngFor="let sellProd of sellingProducts">
+                <app-product-card [product]="sellProd"></app-product-card>
+            </div><div class="carousel-cell" *ngFor="let sellProd of sellingProducts">
+                <app-product-card [product]="sellProd"></app-product-card>
+            </div><div class="carousel-cell" *ngFor="let sellProd of sellingProducts">
+                <app-product-card [product]="sellProd"></app-product-card>
             </div>
         </carousel>
     </div>

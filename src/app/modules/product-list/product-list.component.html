@@ -1,35 +1,5 @@
 <div class="wrapper">
-  <div class="filters">
-    <p class="filter-title">Filtro</p>
-
-    <form class="d-flex" [formGroup]="formGroup" (submit)="searchSubmit()">
-      <div class="filter">
-        <label>Nr i Dhomave</label>
-        <input formControlName="roomsNr" class="form-control" placeholder="Nr i Dhomave" />
-      </div>
-
-      <div class="filter">
-        <label>Adresa</label>
-        <input formControlName="address" class="form-control" placeholder="Adresa" />
-      </div>
-
-      <div class="filter">
-        <label>Nr i Banjove</label>
-        <input formControlName="bathroomNr" class="form-control" placeholder="Nr i Banjove" />
-      </div>
-
-      <div class="filter">
-        <label>Cmimi</label>
-        <input formControlName="price" class="form-control" placeholder="Cmimi" />
-      </div>
-
-      <div class="button">
-        <button mat-raised-button color="accent">
-          <mat-icon class="material-icon">search</mat-icon>
-        </button>
-      </div>
-    </form>
-  </div>
+  <app-filters></app-filters>
 
   <div class="card-list">
     <div class="card" *ngFor="let product of products">

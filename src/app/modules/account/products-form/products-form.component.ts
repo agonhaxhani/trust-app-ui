@@ -108,7 +108,7 @@ export class ProductsFormComponent implements OnInit, AfterViewInit {
       title: value.title.toString(),
       type: value.type.toString(),
       m2: value.m2.toString(),
-      price: value.price ? value.price.toString() : '',
+      price: value.price ? value.price : '',
       rooms: value.roomsNr ? value.roomsNr.toString() : '',
       description: value.description,
       address: value.address,

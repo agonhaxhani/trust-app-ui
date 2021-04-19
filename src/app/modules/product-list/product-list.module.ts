@@ -11,28 +11,33 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { ProductListComponent } from './product-list.component';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
+import { FiltersComponent } from './filters/filters.component';
 
 @NgModule({
   declarations: [
     ProductCardComponent,
-    ProductListComponent
+    ProductListComponent,
+    FiltersComponent
   ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatProgressSpinnerModule,
-    ButtonSpinnerModule,
-    IvyCarouselModule,
-    MatIconModule
-  ],
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatProgressSpinnerModule,
+        ButtonSpinnerModule,
+        IvyCarouselModule,
+        MatIconModule,
+        MatSelectModule
+    ],
   providers: [
   ],
   exports: [
     ProductListComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    FiltersComponent
   ]
 
 })

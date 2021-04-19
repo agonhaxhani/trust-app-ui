@@ -1,0 +1,35 @@
+.filters {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #999;
+  border-radius: 3px;
+
+  .button {
+    margin-top: 23px;
+  }
+
+  .filter-title {
+    font-size: 16px;
+  }
+
+  .filter {
+    width: 24.5%;
+    padding: 5px;
+
+    .price {
+      align-items: center;
+    }
+  }
+
+  input, select {
+    width: 100%;
+    height: 35px;
+    padding: 5px;
+    border: 1px solid #999;
+    border-radius: 3px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
