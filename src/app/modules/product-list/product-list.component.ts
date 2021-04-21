@@ -4,6 +4,7 @@ import {ProductService} from '../../shared/services/product.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {RequestUrls} from '../../shared/constants/RequestUrls';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {TokenService} from '../../shared/services/auth/token.service';
 
 @Component({
   selector: 'app-product-list',
@@ -29,53 +30,33 @@ export class ProductListComponent implements OnInit {
       const bathroomNr = params.bathroomNr;
       const pricegt = params.pricegt;
       const pricelt = params.pricelt;
-      let url;
+      let filters;
 
       if (type) {
-        url = RequestUrls.ACCOUNT.PRODUCT.BASE_API + `?_where[0][type]=${type.toUpperCase()}`;
+        filters = `&_where[0][type]=${type.toUpperCase()}`;
       }
 
       if (rooms) {
-        if (url && url.includes('?')) {
-          url += `&_where[1][rooms]=${rooms}`;
-        } else {
-          url = RequestUrls.ACCOUNT.PRODUCT.BASE_API + `?_where[0][rooms]=${rooms}`;
-        }
+        filters = `&_where[1][rooms]=${rooms}`;
       }
 
       if (address) {
-        if (url && url.includes('?')) {
-          url += `&_where[2][address]=${address}`;
-        } else {
-          url = RequestUrls.ACCOUNT.PRODUCT.BASE_API + `?_where[0][address]=${address}`;
-        }
+        filters = `&_where[2][address]=${address}`;
       }
 
       if (bathroomNr) {
-        if (url && url.includes('?')) {
-          url += `&_where[3][bathroomNr]=${bathroomNr}`;
-        } else {
-          url = RequestUrls.ACCOUNT.PRODUCT.BASE_API + `?_where[0][bathroomNr]=${bathroomNr}`;
-        }
+        filters = `&_where[3][bathroomNr]=${bathroomNr}`;
       }
 
       if (pricegt) {
-        if (url && url.includes('?')) {
-          url += `&_where[4][price_gte]=${pricegt}`;
-        } else {
-          url = RequestUrls.ACCOUNT.PRODUCT.BASE_API + `?_where[0][price_gte]=${pricegt}`;
-        }
+        filters = `&_where[4][price_gte]=${pricegt}`;
       }
 
       if (pricelt) {
-        if (url && url.includes('?')) {
-          url += `&_where[5][price_lte]=${pricelt}`;
-        } else {
-          url = RequestUrls.ACCOUNT.PRODUCT.BASE_API + `?_where[0][price_lte]=${pricelt}`;
-        }
+        filters = `&_where[5][price_lte]=${pricelt}`;
       }
 
-      this.productService.getProducts(url).subscribe(
+      this.productService.getProducts(filters).subscribe(
         result => {
           this.products = result;
         }

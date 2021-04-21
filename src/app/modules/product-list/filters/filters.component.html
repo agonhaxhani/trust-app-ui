@@ -1,13 +1,13 @@
 <div class="filters">
   <p class="filter-title">Filtro</p>
 
-  <form class="d-flex" [formGroup]="formGroup" (submit)="searchSubmit()">
-    <div class="filter">
+  <form class="d-flex row m-0" [formGroup]="formGroup" (submit)="searchSubmit()">
+    <div class="filter col-md-2">
       <label>Nr i Dhomave</label>
       <input formControlName="rooms" class="form-control" placeholder="Nr i Dhomave" />
     </div>
 
-    <div class="filter">
+    <div class="filter col-md-2">
       <label>Tipi</label>
       <select class="form-control" formControlName="type">
         <option selected value="null">Te Gjitha</option>
@@ -16,17 +16,17 @@
       </select>
     </div>
 
-    <div class="filter">
+    <div class="filter col-md-2">
       <label>Adresa</label>
       <input formControlName="address" class="form-control" placeholder="Adresa" />
     </div>
 
-    <div class="filter">
+    <div class="filter col-md-2">
       <label>Nr i Banjove</label>
       <input formControlName="bathroomNr" class="form-control" placeholder="Nr i Banjove" />
     </div>
 
-    <div class="filter price">
+    <div class="filter price col-md-2">
       <label>Cmimi</label>
       <div class="d-flex">
         <input formControlName="pricegt" type="number" class="form-control" placeholder="Nga" />
@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <div class="filter">
+    <div class="filter col-md-2">
       <div class="button">
         <button mat-raised-button color="accent" class="mr-2">
           <mat-icon class="material-icon">search</mat-icon>

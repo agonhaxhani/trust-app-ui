@@ -8,6 +8,8 @@ import {RouterUrls} from '../../../shared/constants/RouterUrls';
 import {GeneralConstant, IMAGEURLS} from '../../../shared/constants/GeneralConstant';
 import {finalize} from "rxjs/operators";
 import {CustomSnackbarService} from "../../../shared/services/snackbar-service.service";
+import {SnackbarService} from '../../../shared/services/snackbar.service';
+import {environment} from '../../../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthenticationService,
               private router: Router,
-              private snackBarService: CustomSnackbarService,
+              private snackBarService: SnackbarService,
               private tokenService: TokenService) {
   }
 
@@ -54,11 +56,12 @@ export class LoginComponent implements OnInit {
       )
       .subscribe(
         result => {
+          this.snackBarService.successSnackBar('User-i u logua me sukses');
           this.tokenService.saveToken(result.data.token);
-          this.router.navigateByUrl('/' + RouterUrls.ACCOUNT.BASE_MODULE);
+          location.href = environment.baseHref;
         },
         error => {
-          this.snackBarService.error('Username or password is wrong')
+          this.snackBarService.errorSnackBar('Gabim ne username ose password');
         });
   }
 

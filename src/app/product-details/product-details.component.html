@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="product-details" *ngIf="product">
 
-    <button [routerLink]="'/account/products/update/' + product.id" type="button" style="float:right; cursor: pointer"
+    <button [routerLink]="'/product/update/' + product.id" type="button" style="float:right; cursor: pointer"
             color="accent" mat-raised-button>Edito</button>
 
     <h2 class="mt-0 product-title">{{product.title}}</h2>

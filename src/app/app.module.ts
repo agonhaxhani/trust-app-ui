@@ -31,7 +31,7 @@ import {GuestModule} from './modules/guest/guest.module';
     NgxUsefulSwiperModule,
     MatButtonModule,
     MatIconModule,
-    GuestModule
+    GuestModule,
   ],
   providers: [
     TokenService,

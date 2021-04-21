@@ -20,9 +20,9 @@ export class HomeComponent implements OnInit {
   }
 
   getRentProducts() {
-    const url = RequestUrls.ACCOUNT.PRODUCT.BASE_API + `?_where[0][type]=QIRA`;
+    const filters = `&_where[0][type]=QIRA`;
 
-    this.productService.getProducts(url).subscribe(
+    this.productService.getProducts(filters).subscribe(
       result => {
         this.rentProducts = result;
       }
@@ -30,9 +30,9 @@ export class HomeComponent implements OnInit {
   }
 
   getSellingProducts() {
-    const url = RequestUrls.ACCOUNT.PRODUCT.BASE_API + `?_where[0][type]=SHITJE`;
+    const filters = `&_where[0][type]=SHITJE`;
 
-    this.productService.getProducts(url).subscribe(
+    this.productService.getProducts(filters).subscribe(
       result => {
         this.sellingProducts = result;
       }

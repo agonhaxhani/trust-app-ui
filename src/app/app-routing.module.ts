@@ -17,10 +17,6 @@ const routes: Routes = [
       {
         path: RouterUrls.GUEST.BASE_MODULE,
         loadChildren: () => import('./modules/guest/guest.module').then(mod => mod.GuestModule),
-      },
-      {
-        path: RouterUrls.ACCOUNT.BASE_MODULE,
-        loadChildren: () => import('./modules/account/account.module').then(mod => mod.AccountModule),
       }
     ]
   }

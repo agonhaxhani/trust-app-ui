@@ -20,9 +20,12 @@ export class ProductService {
     return this.http.delete<any>(RequestUrls.ACCOUNT.PRODUCT.BASE_API + `/${productId}`);
   }
 
-  getProducts(url?: string) {
-    if (!url) {
-      url = RequestUrls.ACCOUNT.PRODUCT.BASE_API;
+  getProducts(filters?: string) {
+    let url;
+    if (filters) {
+      url = RequestUrls.ACCOUNT.PRODUCT.BASE_API + '?_sort=created_at:DESC' + filters;
+    } else {
+      url = RequestUrls.ACCOUNT.PRODUCT.BASE_API + '?_sort=created_at:DESC';
     }
     return this.http.get<any>(url);
   }

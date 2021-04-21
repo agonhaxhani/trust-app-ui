@@ -1,0 +1,53 @@
+<div class="table-plc">
+  <div class="wrapper">
+    <div class="d-flex space">
+      <div class="title">
+        <p>Lista e Kontakteve</p>
+      </div>
+
+      <div class="filter d-flex">
+        <button mat-button (click)="filterData()">
+          <div *ngIf="!seenData" class="d-flex">
+            <p style="padding: 5px; font-weight: 600">Filter By Seen</p>
+            <mat-icon class="material-icons-outlined">visibility</mat-icon>
+          </div>
+          <div *ngIf="seenData" class="d-flex">
+            <p style="padding: 5px; font-weight: 600">Filter By UnSeen</p>
+            <mat-icon class="material-icons-outlined">visibility_off</mat-icon>
+          </div>
+        </button>
+
+        <button mat-button (click)="getContacts(null)">Show All</button>
+      </div>
+    </div>
+
+    <table mat-table [dataSource]="contacts" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td [ngClass]="element.seen ? 'seen' : ''" mat-cell *matCellDef="let element" (click)="goToDetails(element.id)"> {{element.full_name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td [ngClass]="element.seen ? 'seen' : ''" mat-cell *matCellDef="let element" (click)="goToDetails(element.id)"> {{element.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef> Phone </th>
+        <td [ngClass]="element.seen ? 'seen' : ''" mat-cell *matCellDef="let element" (click)="goToDetails(element.id)"> {{element.phone}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <th style="width: 5%" mat-header-cell *matHeaderCellDef> Action </th>
+        <td style="width: 5%" [ngClass]="element.seen ? 'seen' : ''" mat-cell *matCellDef="let element">
+          <button mat-raised-button color="warn" (click)="deleteItem(element.id)">Delete</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
+</div>

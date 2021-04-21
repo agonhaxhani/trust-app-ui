@@ -2,10 +2,10 @@
   <app-filters></app-filters>
 
   <div class="card-list">
-    <div class="card" [hidden]="products.length == 0" *ngFor="let product of products">
+    <div class="card" [hidden]="!products || !products.length" *ngFor="let product of products">
       <app-product-card [product]="product"></app-product-card>
     </div>
-    <div *ngIf="!products.length" class="no-product">
+    <div *ngIf="!products || !products.length" class="no-product">
       <p>Per momentin nuk kemi produkte</p>
     </div>
   </div>

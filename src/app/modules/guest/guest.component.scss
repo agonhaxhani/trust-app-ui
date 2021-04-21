@@ -7,3 +7,9 @@
   padding-top: 60px;
   min-height: calc(100% - 150px);
 }
+
+@media screen and (max-width: 700px) {
+  .content {
+    padding-top: 120px;
+  }
+} 

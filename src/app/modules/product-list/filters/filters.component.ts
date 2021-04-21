@@ -28,7 +28,7 @@ export class FiltersComponent implements OnInit {
       const pricelt = params.pricelt;
 
       this.formGroup = new FormGroup({
-        type: new FormControl(type ? type : 'null'),
+        type: new FormControl(type ? type.toUpperCase() : 'null'),
         rooms: new FormControl(rooms ? rooms : ''),
         pricegt: new FormControl(pricegt ? pricegt : ''),
         pricelt: new FormControl(pricelt ? pricelt : ''),

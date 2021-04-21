@@ -11,11 +11,15 @@
   <div class="right-side">
     <div class="links">
       <a routerLink="/">Home</a>
-      <a (click)="routeToDetails(null)">Te Gjitha</a>
-      <a (click)="routeToDetails(false)">Ne Qira</a>
-      <a (click)="routeToDetails(true)">Ne Shitje</a>
+      <a (click)="routeToDetails(null)">Produktet Tona</a>
       <a routerLink="/contact-us">Kontakti</a>
       <a routerLink="/about-us">Rreth Nesh</a>
+      <a *ngIf="user" routerLink="/contact-list">Lista e Kontakteve</a>
+
+      <button *ngIf="user" mat-button [matMenuTriggerFor]="menu">Admin</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="logOut()">Log Out</button>
+      </mat-menu>
     </div>
   </div>
 

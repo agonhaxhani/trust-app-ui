@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {RouterUrls} from '../../../shared/constants/RouterUrls';
 import {IMAGEURLS} from '../../../shared/constants/GeneralConstant';
 import {TokenService} from '../../../shared/services/auth/token.service';
+import {SnackbarService} from '../../../shared/services/snackbar.service';
 
 @Component({
   selector: 'app-header-not-logged',
@@ -12,11 +13,11 @@ import {TokenService} from '../../../shared/services/auth/token.service';
 export class HeaderNotLogged implements OnInit {
   logoUrl = IMAGEURLS.LOGO;
   avatarUrl = IMAGEURLS.AVATAR;
-  tokenData: any;
-  resetPassword = RouterUrls.ACCOUNT.MANAGE + '/' + RouterUrls.ACCOUNT.RESET_PASSWORD;
+  user: any;
 
-  constructor(private router: Router, private tokenService: TokenService) {
-    this.tokenData = tokenService.getData();
+  constructor(private router: Router, private tokenService: TokenService,
+              private snackbarService: SnackbarService) {
+    this.user = tokenService.getData();
   }
 
   ngOnInit(): void {
@@ -24,7 +25,9 @@ export class HeaderNotLogged implements OnInit {
 
   logOut() {
     localStorage.clear();
-    this.router.navigateByUrl(RouterUrls.GUEST.BASE_MODULE);
+    this.user = '';
+    this.router.navigateByUrl('/');
+    this.snackbarService.successSnackBar("Useri u c'kyq me sukses");
   }
 
   routeToDetails(neShitje) {

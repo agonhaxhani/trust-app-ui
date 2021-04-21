@@ -24,6 +24,17 @@ import { ProductListModule } from '../product-list/product-list.module';
 import { ProductsComponent } from './products/products.component';
 import { ProductService } from 'src/app/shared/services/product.service';
 import {ContactUsService} from '../../shared/services/contact-us.service';
+import {ProductsFormComponent} from './products-form/products-form.component';
+import {FileService} from '../../shared/services/file.service';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {SnackbarService} from '../../shared/services/snackbar.service';
+import {MatMenuModule} from '@angular/material/menu';
+import { ContactListComponent } from './contact-list/contact-list.component';
+import {MatTableModule} from '@angular/material/table';
+import { ContactDetailsComponent } from './contact-details/contact-details.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -37,6 +48,9 @@ import {ContactUsService} from '../../shared/services/contact-us.service';
     HomeComponent,
     HomeBannerTitlesComponent,
     ProductsComponent,
+    ProductsFormComponent,
+    ContactListComponent,
+    ContactDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -49,7 +63,13 @@ import {ContactUsService} from '../../shared/services/contact-us.service';
     MatProgressSpinnerModule,
     ButtonSpinnerModule,
     IvyCarouselModule,
-    ProductListModule
+    ProductListModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatSnackBarModule,
+    MatMenuModule,
+    MatTableModule,
+    MatIconModule
   ],
   exports: [
     MapComponent
@@ -58,7 +78,9 @@ import {ContactUsService} from '../../shared/services/contact-us.service';
     AuthenticationService,
     TokenService,
     ProductService,
-    ContactUsService
+    ContactUsService,
+    FileService,
+    SnackbarService,
   ]
 })
 export class GuestModule {

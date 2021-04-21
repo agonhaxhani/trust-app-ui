@@ -1,0 +1,40 @@
+.wrapper {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.title {
+  p {
+    font-size: 18px;
+  }
+}
+table {
+  width: 100%;
+}
+
+tbody tr:hover {
+  cursor: pointer;
+  background-color: #eee;
+}
+
+td {
+  font-weight: 600;
+}
+
+.seen {
+  background-color: #eee;
+  font-weight: 500;
+}
+
+.space {
+  margin: 20px 0;
+  justify-content: space-between;
+}
+
+mat-icon.seen {
+  color: green;
+}
+
+mat-icon.unseen {
+  color: red;
+}

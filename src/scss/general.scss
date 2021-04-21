@@ -83,3 +83,22 @@ button, button:focus {
   width: 1170px;
   margin:0 auto;
 }
+
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    width: 1000px;
+  } 
+}
+
+@media screen and (max-width: 1000px) {
+  .wrapper {
+    width: 800px;
+  } 
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    width: 100%;
+    padding: 0 30px;
+  } 
+}

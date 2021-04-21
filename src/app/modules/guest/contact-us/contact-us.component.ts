@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {ContactUsService} from '../../../shared/services/contact-us.service';
 import {NavigationStart, Router} from '@angular/router';
+import {SnackbarService} from '../../../shared/services/snackbar.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -11,11 +12,10 @@ import {NavigationStart, Router} from '@angular/router';
 })
 export class ContactUsComponent implements OnInit {
   formGroup: FormGroup;
-  submitted = false;
   window = window;
-  loadedNr = 0;
 
-  constructor(private contactUsService: ContactUsService) { }
+  constructor(private contactUsService: ContactUsService,
+              private snackbarService: SnackbarService) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -39,10 +39,11 @@ export class ContactUsComponent implements OnInit {
 
     this.contactUsService.createContact(value).subscribe(
       result => {
-        console.log(result)
+        this.snackbarService.infoSnackBar("Kontakti eshte ruajtur me sukses");
+        this.initForm();
       },
       error => {
-        console.log(error)
+        this.snackbarService.infoSnackBar("Gabim gjate ruajtjes se kontaktit");
       }
     )
 

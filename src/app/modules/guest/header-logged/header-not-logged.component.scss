@@ -2,7 +2,7 @@
 
 :host {
   width: 100%;
-  z-index: 99999;
+  z-index: 999999;
   position: fixed;
 }
 
@@ -52,6 +52,23 @@ a {
 
     a {
       margin-right: 45px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 870px) {
+  .header-fixed {
+    height: auto;
+    padding: 10px 30px;
+
+    img {
+      max-width: 120px;
+      min-width: 120px;
+    }
+
+    .right-side {
+      width: 70%;
     }
   }
 }

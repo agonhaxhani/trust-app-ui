@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import { FileService } from 'src/app/shared/services/file.service';
 import {ProductService} from 'src/app/shared/services/product.service';
 import {ProductTypeEnum} from '../../../shared/models/product/product-type.enum';
+import {SnackbarService} from '../../../shared/services/snackbar.service';
 
 @Component({
   selector: 'app-products-form',
@@ -30,6 +31,7 @@ export class ProductsFormComponent implements OnInit, AfterViewInit {
   constructor(private productService: ProductService,
               private activatedRoute: ActivatedRoute,
               private fileService: FileService,
+              private snackBarService: SnackbarService,
               private router: Router) {
   }
 
@@ -93,6 +95,7 @@ export class ProductsFormComponent implements OnInit, AfterViewInit {
 
   onSelectFile(event) {
     const files = event.target.files;
+    this.snackBarService.infoSnackBar("Ju lutem prisni deri sa te upload-ohen file-at");
 
     if (files) {
       for (const element of files){
@@ -121,13 +124,16 @@ export class ProductsFormComponent implements OnInit, AfterViewInit {
       product_files: this.productFiles
     };
 
+    this.snackBarService.infoSnackBar("Produkti duke u ruajtur");
+
     if (this.productId) {
       this.productToSave.id = this.productId;
       this.productService.updateProduct(this.productToSave).subscribe(
         result => {
-          this.router.navigateByUrl('/account/products');
+          this.snackBarService.successSnackBar("Produkti u ruajt me sukses");
+          this.router.navigateByUrl('/product/list');
         }, error => {
-          window.alert('ERROR');
+          this.snackBarService.errorSnackBar("Gabim gjate ruajtjes se produktit");
         }
       );
       return;
@@ -135,9 +141,10 @@ export class ProductsFormComponent implements OnInit, AfterViewInit {
 
     this.productService.createProduct(this.productToSave).subscribe(
       result => {
-        this.router.navigateByUrl('/account/products');
+        this.router.navigateByUrl('/product/list');
+        this.snackBarService.successSnackBar("Produkti u ruajt me sukses");
       }, error => {
-        window.alert('ERROR');
+        this.snackBarService.errorSnackBar("Gabim gjate ruajtjes se produktit");
       }
     );
   }
@@ -202,7 +209,7 @@ export class ProductsFormComponent implements OnInit, AfterViewInit {
         this.removeImage(item, index);
       });
 
-      this.router.navigateByUrl('/account/products');
+      this.router.navigateByUrl('/product/list');
     });
   }
 
