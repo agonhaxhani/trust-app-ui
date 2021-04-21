@@ -13,6 +13,9 @@ export const RequestUrls = {
     PRODUCT: {
       BASE_API: environment.api + '/products',
     },
+    CONTACT: {
+      BASE_API: environment.api + '/contacts',
+    },
     PRODUCT_FILES: {
       BASE_API: environment.api + '/product-files'
     },

@@ -23,6 +23,7 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { ProductListModule } from '../product-list/product-list.module';
 import { ProductsComponent } from './products/products.component';
 import { ProductService } from 'src/app/shared/services/product.service';
+import {ContactUsService} from '../../shared/services/contact-us.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { ProductService } from 'src/app/shared/services/product.service';
   providers: [
     AuthenticationService,
     TokenService,
-    ProductService
+    ProductService,
+    ContactUsService
   ]
 })
 export class GuestModule {

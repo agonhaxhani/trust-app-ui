@@ -1,46 +1,55 @@
 <div class="container-contact100">
+    <!-- <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe7tXKgIRttP1zQo84-mofLJZTF0gJUforHdVQOz6zMAd2OEg/formResponse"
+        method="POST">
+        <input matInput type="hidden" name="entry.279404712" value="">
+        <input matInput type="hidden" name="entry.336411324" value="">
+        <input matInput type="hidden" name="entry.1683077209" value="">
+        <input matInput type="hidden" name="entry.1751659921" value="">
+
+        <button type="submit">Submit</button>
+    </form> -->
+
     <div class="wrap-contact100">
         <div class="contact100-form-title" style="background-image: url(images/bg-01.jpg);">
             <span class="contact100-form-title-1">
-                Contact Us
+                Kontaktoni me ne
             </span>
 
             <span class="contact100-form-title-2">
-                Feel free to drop us a line below!
+                Ju mund te na besoni!
             </span>
         </div>
 
-        <form class="contact100-form validate-form">
-            <div class="wrap-input100 validate-input" data-validate="Name is required">
-                <span class="label-input100">Full Name:</span>
-                <input class="input100" type="text" name="name" placeholder="Enter full name">
-                <span class="focus-input100"></span>
+        <form class="contact100-form" *ngIf="formGroup" (submit)="onSubmit()" [formGroup]="formGroup">
+                <mat-form-field>
+                    <mat-label>Emri dhe mbiemri</mat-label>
+                    <input matInput formControlName="full_name" placeholder="Emri dhe mbiemri">
+                </mat-form-field>
+
+            <div class="wrap-input matInput100">
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" placeholder="Email Adresa">
+                </mat-form-field>
             </div>
 
-            <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                <span class="label-input100">Email:</span>
-                <input class="input100" type="text" name="email" placeholder="Enter email addess">
-                <span class="focus-input100"></span>
+            <div class="wrap-input matInput100">
+                <mat-form-field>
+                    <mat-label>Nr i Telefonit</mat-label>
+                    <input matInput formControlName="phone" placeholder="Nr i telefonit">
+                </mat-form-field>
             </div>
 
-            <div class="wrap-input100 validate-input" data-validate="Phone is required">
-                <span class="label-input100">Phone:</span>
-                <input class="input100" type="text" name="phone" placeholder="Enter phone number">
-                <span class="focus-input100"></span>
-            </div>
-
-            <div class="wrap-input100 validate-input" data-validate = "Message is required">
-                <span class="label-input100">Message:</span>
-                <textarea class="input100" name="message" placeholder="Your Comment..."></textarea>
-                <span class="focus-input100"></span>
+            <div class="wrap-input matInput100">
+                <mat-form-field>
+                    <mat-label>Mesazhi</mat-label>
+                    <textarea matInput formControlName="message" placeholder="Mesazhi..."></textarea>
+                </mat-form-field>
             </div>
 
             <div class="container-contact100-form-btn">
-                <button class="contact100-form-btn">
-                    <span>
-                        Submit
-                        <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-                    </span>
+                <button mat-raised-button color="primary" class="contact100-form-btn">
+                    <span>Submit</span>
                 </button>
             </div>
         </form>
