@@ -11,6 +11,7 @@ import {TokenService} from '../../../shared/services/auth/token.service';
 })
 export class FooterComponent implements OnInit {
   instagramUrl = IMAGEURLS.INSTAGRAM;
+  logoWhite = IMAGEURLS.LOGO_WHITE;
 
   constructor() {
   }
