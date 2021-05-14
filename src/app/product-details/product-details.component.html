@@ -26,10 +26,16 @@
         <h3 class="mt-0">Detajet e Produktit</h3>
 
         <div class="options">
+          
           <div class="option d-flex">
-            <p class="title">Cmimi:</p>
+            <p class="title">ID e Produktit:</p>
+            <p class="value">{{product.productId}}</p>
+          </div>
+
+          <div class="option d-flex">
+            <p class="title">Çmimi:</p>
             <p class="value" *ngIf="product.price">{{product.price}}</p>
-            <p class="value" *ngIf="!product.price">Me Marreveshje</p>
+            <p class="value" *ngIf="!product.price">Me Marrëveshje</p>
           </div>
 
           <div class="option d-flex">
@@ -38,27 +44,27 @@
           </div>
 
           <div class="option d-flex">
-            <p class="title">Nr i Dhomave:</p>
+            <p class="title">Nr. i Dhomave:</p>
             <p class="value">{{product.rooms}}</p>
           </div>
 
           <div class="option d-flex">
-            <p class="title">Nr i Banjove:</p>
+            <p class="title">Nr. i Banjove:</p>
             <p class="value">{{product.bathroomNr}}</p>
           </div>
 
           <div class="option d-flex">
-            <p class="title">Nr i Depove:</p>
+            <p class="title">Nr. i Depove:</p>
             <p class="value">{{product.storageNr}}</p>
           </div>
 
           <div class="option d-flex">
-            <p class="title">Nr i Ballkoneve:</p>
+            <p class="title">Nr. i Ballkoneve:</p>
             <p class="value">{{product.balconyNr}}</p>
           </div>
 
           <div class="option d-flex">
-            <p class="title">Metra Katrore:</p>
+            <p class="title">Metra Katrorë:</p>
             <p class="value">{{product.m2}}</p>
           </div>
 
@@ -79,7 +85,7 @@
     </div>
 
     <div class="description">
-      <h3>Pershkrimi</h3>
+      <h3>Përshkrimi</h3>
       <p>{{product.description}}</p>
     </div>
 

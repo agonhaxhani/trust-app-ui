@@ -31,7 +31,7 @@
 
         <div class="two-inputs">
           <mat-form-field class="example-full-width">
-            <mat-label>Cmimi</mat-label>
+            <mat-label>Çmimi</mat-label>
             <input type="number" formControlName="price" matInput placeholder="Cmimi">
           </mat-form-field>
 
@@ -78,7 +78,7 @@
         </div>
 
         <mat-form-field class="example-full-width">
-          <mat-label>Pershkrimi</mat-label>
+          <mat-label>Përshkrimi</mat-label>
           <input formControlName="description" matInput placeholder="Pershkrimi" />
         </mat-form-field>
       </div>
@@ -90,7 +90,7 @@
     </div>
 
     <div class="buttons">
-      <button mat-raised-button color='warn' style="float: left" (click)="deleteProduct()">Fshij</button>
+      <button *ngIf="productId" mat-raised-button color='warn' style="float: left" (click)="deleteProduct()">Fshij</button>
       <a routerLink="/account/products" type="button" mat-raised-button>Anulo</a>
       <button (click)="formSubmit()" mat-raised-button color="primary">{{productId ? 'Edito' : 'Shto'}}</button>
     </div>
