@@ -76,3 +76,9 @@
       transform: translateY(nth($steps, length($steps)));
     }
   }
+
+  @media screen and(max-width: 700px) {
+    .ms-header__title {
+      font-size: 2rem;
+    }
+  }
