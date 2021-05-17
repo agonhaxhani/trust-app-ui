@@ -75,3 +75,29 @@
     color: $secondary;
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .slider {
+    width: 400px;
+  }
+
+  .details {
+    width: calc(100% - 400px);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .slider-details {
+    flex-direction: column;
+  }
+
+  .slider {
+    width: 90%;
+    margin:0 auto;
+  }
+
+  .details {
+    width: 100%;
+  }
+}
+

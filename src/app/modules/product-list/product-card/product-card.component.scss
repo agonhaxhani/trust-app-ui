@@ -8,6 +8,7 @@
         margin: auto;
         position: relative;
         overflow: hidden;
+        border: 1px solid #dbdbdb;
         border-radius: 10px 10px 10px 10px;
         box-shadow: 0;
         transform: scale(0.95);
@@ -22,7 +23,7 @@
         .container {
             width: 100%;
             height: 100%;
-            padding: 10px;
+            padding: 0;
 
             .top {
                 background-repeat: no-repeat;
@@ -35,8 +36,9 @@
                 -o-background-size: 100%;
             }
             .bottom {
-                height: 70px;
+                height: 88px;
                 transition: transform 0.5s;
+
                 &.clicked {
                     transform: translateX(-50%);
                 }
@@ -56,8 +58,11 @@
                     float: left;
                     .details {
                         padding: 2px 15px;
-                        float: left;
-                        width: calc(70% - 40px);
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
                     }
                     .buy {
                         float: right;
@@ -153,7 +158,6 @@
 @media screen and (max-width: 900px) {
     .product-card .wrapper {
         width: 300px !important;
-        height: 316px !important;
     }
 
     .product-card .wrapper .container .top {

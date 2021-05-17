@@ -14,8 +14,13 @@ app-home-banner-titles {
   padding-top: 100px;
 }
 
+.slider-wrapper {
+  width: 1400px;
+  margin: 0 auto;
+}
+
 .image {
-    background-image:url("/trust-app-ui/assets/images/ariani.jpg");
+    background-image:url("/assets/images/ariani.jpg");
     height:100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -83,6 +88,13 @@ app-filters {
   
 }
 
+
+@media screen and (max-width: 900px) {
+  app-filters {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 800px){
 
   .background-image {
@@ -93,10 +105,6 @@ app-filters {
     padding-top: 0;
   }
 
-  app-filters {
-    display: none;
-  }
-
   .image {
     &::ng-deep {
       .ms-header__title {
@@ -104,6 +112,48 @@ app-filters {
         padding-top: 70px;
       }
     }
+  }
+} 
+
+::ng-deep .product-card .wrapper {
+  width: 100% !important;
+}
+
+@media screen and (max-width: 1450px){
+  .slider-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+  }
+} 
+
+
+@media screen and (max-width: 1200px){
+  .slider-wrapper {
+    width: 1000px;
+  }
+
+  ::ng-deep .product-card * {
+    font-size: 14px !important;
+  }
+} 
+
+@media screen and (max-width: 1000px){
+  .slider-wrapper {
+    width: 800px;
+  }
+} 
+
+
+@media screen and (max-width: 800px){
+  .slider-wrapper {
+    width: 600px;
+  }
+} 
+
+
+@media screen and (max-width: 600px){
+  .slider-wrapper {
+    width: 400px;
   }
 } 
 

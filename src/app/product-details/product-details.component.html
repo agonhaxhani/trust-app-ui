@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="product-details" *ngIf="product">
 
-    <button [routerLink]="'/product/update/' + product.id" type="button" style="float:right; cursor: pointer"
+    <button *ngIf="user" [routerLink]="'/product/update/' + product.id" type="button" style="float:right; cursor: pointer"
             color="accent" mat-raised-button>Edito</button>
 
     <h2 class="mt-0 product-title">{{product.title}}</h2>
@@ -29,7 +29,7 @@
           
           <div class="option d-flex">
             <p class="title">ID e Produktit:</p>
-            <p class="value">{{product.productId}}</p>
+            <p class="value">{{product.id}}</p>
           </div>
 
           <div class="option d-flex">
@@ -89,6 +89,6 @@
       <p>{{product.description}}</p>
     </div>
 
-    <app-map [latitude]="product.productLatitude" [longitude]="product.productLongitude"></app-map>
+    <app-map *ngIf="product.productLatitude && product.productLongitude" [latitude]="product.productLatitude" [longitude]="product.productLongitude"></app-map>
   </div>
 </div>

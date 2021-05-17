@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../shared/services/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {SwiperOptions} from 'swiper';
+import { TokenService } from '../shared/services/auth/token.service';
 
 @Component({
   selector: 'app-product-details',
@@ -22,13 +23,16 @@ export class ProductDetailsComponent implements OnInit {
     },
     spaceBetween: 30
   };
+  user: any;
 
   constructor(private productService: ProductService,
+              private tokenService: TokenService,
               private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.productId = this.activatedRoute.snapshot.params.id;
     this.getProductData();
+    this.user = this.tokenService.getData();
   }
 
   getProductData() {

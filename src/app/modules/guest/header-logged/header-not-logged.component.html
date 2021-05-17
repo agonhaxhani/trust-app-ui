@@ -2,7 +2,7 @@
 
   <div class="left-side">
     <div class="logo-plc">
-      <a href="#">
+      <a routerLink="/">
         <img src="{{logoUrl}}" />
       </a>
     </div>
@@ -11,7 +11,7 @@
   <div class="right-side">
     <div class="links">
       <a routerLink="/">Home</a>
-      <a (click)="routeToDetails(null)">Produktet</a>
+      <a routerLink="/product/list">Produktet</a>
       <a routerLink="/contact-us">Kontakti</a>
       <a routerLink="/about-us">Rreth Nesh</a>
       <a *ngIf="user" routerLink="/contact-list">Lista e Kontakteve</a>
