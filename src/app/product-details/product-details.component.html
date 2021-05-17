@@ -10,13 +10,17 @@
       <div class="slider" *ngIf="product && product.product_files">
         <swiper [config]="config">
           <div class="swiper-wrapper">
-            <div *ngFor="let image of product.product_files" class="swiper-slide"><img [src]="image.fileData.formats.large.url" alt="img 1"></div>
+            <div *ngFor="let image of product.product_files" class="swiper-slide">
+              <img *ngIf="image.fileData.formats && (!image.fileData.url || !image.fileData.url.includes('mp4'))" [src]="image.fileData.formats.large.url" alt="img 1">
+
+              <video *ngIf="image.fileData.url && image.fileData.url.includes('mp4')" autoplay width="100%" height="100%" controls>
+                <source [src]="image.fileData.url" type='video/mp4' />
+              </video>
+            </div>
           </div>
 
-          <!-- Add Pagination -->
           <div class="swiper-pagination"></div>
 
-          <!-- Add Arrows -->
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
         </swiper>

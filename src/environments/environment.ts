@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  api: 'http://localhost:1337',
+  api: 'https://trust-real-estate-backend.herokuapp.com',
+  // api: 'http://localhost:1337',
   baseHref: 'http://localhost:4200'
 };
 

@@ -1,13 +1,17 @@
 <div>
-  <div class="image" *ngFor="let file of productFiles; let i = index" (click)="removeImage(file, i)">
+  <div [ngClass]="file.fileData.url.includes('mp4') ? 'video' : ''" class="image mt-4" *ngFor="let file of productFiles; let i = index" (click)="removeImage(file, i)">
     <i class="material-icons">close</i>
     <img *ngIf="file && file.fileData && file.fileData.formats && file.fileData.formats.thumbnail"
       [src]="file.fileData.formats.thumbnail.url" height="200">
+
+      <video *ngIf="file.fileData.url && file.fileData.url.includes('mp4')" autoplay width="100%" height="100%" controls>
+          <source [src]="file.fileData.url" type='video/mp4' />
+        </video>
   </div>
 
   <div class="file-uploader-plc">
     <label class="file-uploader" for="fileUploader">Add Photo</label>
-    <input [multiple]="true" id="fileUploader" hidden type='file' (change)="onSelectFile($event)">
+    <input [multiple]="true" accept="image/jpeg,image/jpg,image/png,video/mp4" id="fileUploader" hidden type='file' (change)="onSelectFile($event)">
   </div>
 
   <div class="form-placeholder">

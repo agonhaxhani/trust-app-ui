@@ -1,11 +1,15 @@
 <div class="product-card" *ngIf="product">
     <div class="wrapper">
         <div class="container">
-          <div (click)="navigateToDetails(product.id)" class="top pointer" *ngIf="product.product_files && product.product_files.length && product.product_files[0].fileData.formats.small"
+          <div (click)="navigateToDetails(product.id)" class="top pointer" *ngIf="product.product_files && product.product_files.length && product.product_files[0].fileData.formats && product.product_files[0].fileData.formats.small"
               [ngStyle]="{ 'background-image': 'url(' + product.product_files[0].fileData.formats.small.url + ')'}"></div>
 
-          <div (click)="navigateToDetails(product.id)" class="top pointer" *ngIf="product.product_files && product.product_files.length && !product.product_files[0].fileData.formats.small"
+          <div (click)="navigateToDetails(product.id)" class="top pointer" *ngIf="product.product_files && product.product_files.length && product.product_files[0].fileData.formats && !product.product_files[0].fileData.formats.small"
           [ngStyle]="{ 'background-image': 'url(' + product.product_files[0].fileData.formats.thumbnail.url + ')'}"></div>
+
+          <div (click)="navigateToDetails(product.id)" class="top pointer" 
+          *ngIf="product.product_files.length && product.product_files[0].fileData && product.product_files[0].fileData.url && product.product_files[0].fileData.url.includes('mp4')"
+          [ngStyle]="{ 'background-image': 'url(/trust-app-ui/assets/images/card-preview.png)'}"></div>
 
           <div class="bottom">
             <div class="left">

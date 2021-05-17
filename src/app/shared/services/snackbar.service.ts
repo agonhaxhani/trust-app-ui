@@ -25,7 +25,7 @@ export class SnackbarService {
   }
 
   infoSnackBar(message: string) {
-    this._snackBar.open(message, 'Error', {
+    this._snackBar.open(message, 'Info', {
       duration: 5000,
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,

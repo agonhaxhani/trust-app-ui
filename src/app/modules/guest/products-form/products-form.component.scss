@@ -56,11 +56,10 @@
     display: none;
   }
 
-  &:hover {
-    background-color: rgba(255, 0, 0, 0.8);
-    opacity: 0.5;
+  &:hover { 
     border: 2px dashed red;
     cursor: pointer;
+    opacity: 0.8;
 
     i {
       display: block;
@@ -68,6 +67,11 @@
       border-radius: 50%;
       color: white;
     }
+  }
+
+  &:hover:not(.video) {
+    background-color: rgba(255, 0, 0, 0.8);
+    opacity: 0.5;
   }
 }
 
