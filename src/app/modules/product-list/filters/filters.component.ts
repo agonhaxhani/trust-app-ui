@@ -26,6 +26,7 @@ export class FiltersComponent implements OnInit {
       const bathroomNr = params.bathroomNr;
       const pricegt = params.pricegt;
       const pricelt = params.pricelt;
+      const id = params.id;
 
       this.formGroup = new FormGroup({
         type: new FormControl(type ? type.toUpperCase() : 'null'),
@@ -34,6 +35,7 @@ export class FiltersComponent implements OnInit {
         pricelt: new FormControl(pricelt ? pricelt : ''),
         address: new FormControl(address ? address : ''),
         bathroomNr: new FormControl(bathroomNr ? bathroomNr : ''),
+        id: new FormControl(id ? id : ''),
       });
     });
   }
@@ -49,6 +51,7 @@ export class FiltersComponent implements OnInit {
         bathroomNr: value.bathroomNr,
         pricegt: value.pricegt,
         pricelt: value.pricelt,
+        id: value.id,
       }});
   }
 

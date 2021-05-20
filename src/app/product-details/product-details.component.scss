@@ -95,8 +95,12 @@
     flex-direction: column;
   }
 
+  .wrapper {
+    padding: 0;
+  }
+
   .slider {
-    width: 90%;
+    width: 600px;
     margin:0 auto;
   }
 
@@ -105,3 +109,14 @@
   }
 }
 
+@media screen and (max-width: 600px) {
+  .slider {
+    width: 425px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .slider {
+    width: 325pxpx;
+  }
+}

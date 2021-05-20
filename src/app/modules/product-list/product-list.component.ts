@@ -30,6 +30,8 @@ export class ProductListComponent implements OnInit {
       const bathroomNr = params.bathroomNr;
       const pricegt = params.pricegt;
       const pricelt = params.pricelt;
+      const id = params.id;
+      
       let filters;
 
       if (type) {
@@ -54,6 +56,10 @@ export class ProductListComponent implements OnInit {
 
       if (pricelt) {
         filters = `&_where[5][price_lte]=${pricelt}`;
+      }
+
+      if (id) {
+        filters = `&_where[6][id]=${id}`;
       }
 
       this.productService.getProducts(filters).subscribe(
