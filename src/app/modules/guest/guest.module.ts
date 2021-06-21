@@ -35,6 +35,7 @@ import { ContactListComponent } from './contact-list/contact-list.component';
 import {MatTableModule} from '@angular/material/table';
 import { ContactDetailsComponent } from './contact-details/contact-details.component';
 import {MatIconModule} from '@angular/material/icon';
+import {SwiperModule} from 'swiper/angular';
 
 @NgModule({
   declarations: [
@@ -52,25 +53,26 @@ import {MatIconModule} from '@angular/material/icon';
     ContactListComponent,
     ContactDetailsComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    GuestRoutingModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatProgressSpinnerModule,
-    ButtonSpinnerModule,
-    IvyCarouselModule,
-    ProductListModule,
-    MatSelectModule,
-    MatCheckboxModule,
-    MatSnackBarModule,
-    MatMenuModule,
-    MatTableModule,
-    MatIconModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        GuestRoutingModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatProgressSpinnerModule,
+        ButtonSpinnerModule,
+        IvyCarouselModule,
+        ProductListModule,
+        MatSelectModule,
+        MatCheckboxModule,
+        MatSnackBarModule,
+        MatMenuModule,
+        MatTableModule,
+        MatIconModule,
+        SwiperModule
+    ],
   exports: [
     MapComponent
   ],

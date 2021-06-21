@@ -6,8 +6,8 @@ import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@a
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements AfterViewInit {
-  @Input() latitude = 42.8914;
-  @Input() longitude = 20.8660;
+  @Input() latitude = 42.88912474485632;
+  @Input() longitude = 20.867610105426852;
 
   @ViewChild('map') mapElement: ElementRef;
   map: google.maps.Map;

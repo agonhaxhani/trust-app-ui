@@ -14,7 +14,9 @@ p {
   width: 100%;
   background-image:url("/assets/images/map-1-min.png");
   background-position: center;
-  
+  background-size: COVER;
+  background-repeat: no-repeat;
+
   .top {
     display: flex;
 

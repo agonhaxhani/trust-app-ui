@@ -7,7 +7,7 @@
           <div (click)="navigateToDetails(product.id)" class="top pointer" *ngIf="product.product_files && product.product_files.length && product.product_files[0].fileData.formats && !product.product_files[0].fileData.formats.small"
           [ngStyle]="{ 'background-image': 'url(' + product.product_files[0].fileData.formats.thumbnail.url + ')'}"></div>
 
-          <div (click)="navigateToDetails(product.id)" class="top pointer" 
+          <div (click)="navigateToDetails(product.id)" class="top pointer"
           *ngIf="product.product_files.length && product.product_files[0].fileData && product.product_files[0].fileData.url && product.product_files[0].fileData.url.includes('mp4')"
           [ngStyle]="{ 'background-image': 'url(/assets/images/card-preview.png)'}"></div>
 
@@ -27,7 +27,7 @@
           <div class="contents">
             <table>
               <tr>
-                <th>Rooms</th>
+                <th>Nr i Dhomave</th>
                 <th>M2</th>
               </tr>
               <tr>
