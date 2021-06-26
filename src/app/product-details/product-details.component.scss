@@ -6,6 +6,7 @@
   min-height: 100%;
 }
 
+
 .product-details {
   background-color: white;
   border-radius: 5px;
@@ -18,6 +19,7 @@
   width: 700px;
   border-radius: 3px;
   overflow: hidden;
+  position: relative;
 
   img, video {
     width: 100%;
@@ -80,6 +82,24 @@
   }
 }
 
+.product-done {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: rgba(0,0,0,0.5);
+  text-align: center;
+
+  img {
+    height: 100%;
+    width: auto;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .slider {
     width: 400px;
@@ -117,6 +137,6 @@
 
 @media screen and (max-width: 450px) {
   .slider {
-    width: 325pxpx;
+    width: 325px;
   }
 }

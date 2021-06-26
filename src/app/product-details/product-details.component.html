@@ -8,6 +8,11 @@
 
     <div class="slider-details d-flex">
       <div class="slider" *ngIf="product && product.product_files">
+        <div *ngIf="product.done" class="product-done">
+          <img *ngIf="product.type == 'QIRA'" src="./assets/images/rented.png"/>
+          <img *ngIf="product.type == 'SHITJE'" src="./assets/images/sold.png"/>
+        </div>
+
         <swiper [config]="config">
           <div class="swiper-wrapper">
             <div *ngFor="let image of product.product_files" class="swiper-slide">
@@ -30,7 +35,7 @@
         <h3 class="mt-0">Detajet e Produktit</h3>
 
         <div class="options">
-          
+
           <div class="option d-flex">
             <p class="title">ID e Produktit:</p>
             <p class="value">{{product.id}}</p>

@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {RequestUrls} from '../../shared/constants/RequestUrls';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {TokenService} from '../../shared/services/auth/token.service';
+import {finalize} from 'rxjs/operators';
 
 @Component({
   selector: 'app-product-list',
@@ -13,12 +14,19 @@ import {TokenService} from '../../shared/services/auth/token.service';
 })
 export class ProductListComponent implements OnInit {
   products: [];
+  loading = true;
+  activeProds: false;
 
   constructor(private productService: ProductService,
               private router: Router,
               private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getProducts();
+  }
+
+  changedDone(event) {
+    this.activeProds = event.checked;
     this.getProducts();
   }
 
@@ -31,7 +39,7 @@ export class ProductListComponent implements OnInit {
       const pricegt = params.pricegt;
       const pricelt = params.pricelt;
       const id = params.id;
-      
+
       let filters;
 
       if (type) {
@@ -62,7 +70,13 @@ export class ProductListComponent implements OnInit {
         filters = `&_where[6][id]=${id}`;
       }
 
-      this.productService.getProducts(filters).subscribe(
+      if (this.activeProds) {
+        filters = `&_where[7][done]=${!this.activeProds}`;
+      }
+
+      this.productService.getProducts(filters)
+        .pipe(finalize(() => this.loading = false))
+        .subscribe(
         result => {
           this.products = result;
         }

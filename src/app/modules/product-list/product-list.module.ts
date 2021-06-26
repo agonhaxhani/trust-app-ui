@@ -13,6 +13,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import { FiltersComponent } from './filters/filters.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FiltersComponent } from './filters/filters.component';
         ButtonSpinnerModule,
         IvyCarouselModule,
         MatIconModule,
-        MatSelectModule
+        MatSelectModule,
+        MatCheckboxModule
     ],
   providers: [
   ],

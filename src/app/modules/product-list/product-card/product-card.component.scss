@@ -34,6 +34,20 @@
                 -webkit-background-size: 100%;
                 -moz-background-size: 100%;
                 -o-background-size: 100%;
+
+              &.done {
+                position: absolute;
+                top: 0;
+                bottom: 90px;
+                left: 0;
+                right: 0;
+                background-color: rgba(0,0,0,0.5);
+                text-align: center;
+
+                img {
+                  height: 100%;
+                }
+              }
             }
             .bottom {
                 height: 88px;

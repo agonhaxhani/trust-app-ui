@@ -1,11 +1,11 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
-$akropoli-pr-ui-primary: mat-palette($mat-green, 800);
-$akropoli-pr-ui-accent: mat-palette($mat-orange, 800);
-$akropoli-pr-ui-warn: mat-palette($mat-red);
+$trust-pr-ui-primary: mat-palette($mat-green, 800);
+$trust-pr-ui-accent: mat-palette($mat-orange, 800);
+$trust-pr-ui-warn: mat-palette($mat-red);
 
-$akropoli-pr-ui-theme: mat-light-theme($akropoli-pr-ui-primary, $akropoli-pr-ui-accent, $akropoli-pr-ui-warn);
+$akropoli-pr-ui-theme: mat-light-theme($trust-pr-ui-primary, $trust-pr-ui-accent, $trust-pr-ui-warn);
 
 @include angular-material-theme($akropoli-pr-ui-theme);
 

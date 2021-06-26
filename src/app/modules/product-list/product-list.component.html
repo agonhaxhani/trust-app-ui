@@ -2,9 +2,19 @@
   <app-filters></app-filters>
 
   <div class="card-list">
+    <div style="width: 100%" style="padding: 10px">
+      <label>Trego vetem produktet aktive</label>
+      <mat-checkbox style="padding: 4px" label="Active" (change)="changedDone($event)"></mat-checkbox>
+    </div>
+
     <div class="card" [hidden]="!products || !products.length" *ngFor="let product of products">
       <app-product-card [product]="product"></app-product-card>
     </div>
+
+    <div class="loader" *ngIf="loading">
+      <mat-spinner color="accent"></mat-spinner>
+    </div>
+
     <div *ngIf="!products || !products.length" class="no-product">
       <p>Per momentin nuk kemi produkte</p>
     </div>

@@ -1,6 +1,11 @@
 <div class="product-card" *ngIf="product">
     <div class="wrapper">
         <div class="container">
+          <div *ngIf="product.done" class="top pointer done">
+            <img *ngIf="product.type == 'QIRA'" src="./assets/images/rented.png"/>
+            <img *ngIf="product.type == 'SHITJE'" src="./assets/images/sold.png"/>
+          </div>
+
           <div (click)="navigateToDetails(product.id)" class="top pointer" *ngIf="product.product_files && product.product_files.length && product.product_files[0].fileData.formats && product.product_files[0].fileData.formats.small"
               [ngStyle]="{ 'background-image': 'url(' + product.product_files[0].fileData.formats.small.url + ')'}"></div>
 

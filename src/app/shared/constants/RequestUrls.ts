@@ -23,5 +23,8 @@ export const RequestUrls = {
       UPLOAD: environment.api + '/upload',
       DELETE_FILES: environment.api + '/upload/files',
     },
+    CONFIGS: {
+      CONFIGS: environment.api + '/configs'
+    }
   },
 };
