@@ -1,3 +1,5 @@
+@import "~src/scss/theme";
+
 :host {
     display: flex;
     flex: 1;
@@ -10,6 +12,10 @@
   height: 500px;
 }
 
+.no-prods {
+  color: $secondary;
+}
+
 app-home-banner-titles {
   padding-top: 100px;
 }
@@ -19,8 +25,14 @@ app-home-banner-titles {
   margin: 0 auto;
 }
 
+.spinner {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
 .image {
-    background-image:url("/assets/images/ariani.jpg");
     height:100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -53,7 +65,7 @@ app-home-banner-titles {
     .title {
         font-weight: 500;
         font-size: 20px;
-        margin-bottom: 15px;
+        margin: 15px;
         text-align: center;
     }
 
@@ -84,8 +96,8 @@ app-filters {
   app-filters {
     left: 1%;
     right: 1%;
-  }  
-  
+  }
+
 }
 
 
@@ -113,7 +125,7 @@ app-filters {
       }
     }
   }
-} 
+}
 
 ::ng-deep .product-card .wrapper {
   width: 100% !important;
@@ -124,7 +136,7 @@ app-filters {
     width: 1200px;
     margin: 0 auto;
   }
-} 
+}
 
 
 @media screen and (max-width: 1200px){
@@ -135,27 +147,27 @@ app-filters {
   ::ng-deep .product-card * {
     font-size: 14px !important;
   }
-} 
+}
 
 @media screen and (max-width: 1000px){
   .slider-wrapper {
     width: 800px;
   }
-} 
+}
 
 
 @media screen and (max-width: 800px){
   .slider-wrapper {
     width: 600px;
   }
-} 
+}
 
 
 @media screen and (max-width: 600px){
   .slider-wrapper {
     width: 400px;
   }
-} 
+}
 
 @media screen and (max-width: 600px){
   .image {
@@ -165,4 +177,4 @@ app-filters {
       }
     }
   }
-} 
+}

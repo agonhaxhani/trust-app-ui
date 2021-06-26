@@ -9,10 +9,10 @@ import { TokenService } from '../../shared/services/auth/token.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
-import { ButtonSpinnerModule } from "../../shared/components/button-spinner/button-spinner.module";
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ButtonSpinnerModule } from '../../shared/components/button-spinner/button-spinner.module';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { HeaderNotLogged } from './header-logged/header-not-logged.component';
+import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { LoginComponent } from './login/login.component';
@@ -36,13 +36,15 @@ import {MatTableModule} from '@angular/material/table';
 import { ContactDetailsComponent } from './contact-details/contact-details.component';
 import {MatIconModule} from '@angular/material/icon';
 import {SwiperModule} from 'swiper/angular';
+import { ConfigsComponent } from './configs/configs.component';
+import {ConfigsService} from '../../shared/services/configs.service';
 
 @NgModule({
   declarations: [
     GuestComponent,
     LoginComponent,
     AboutUsComponent,
-    HeaderNotLogged,
+    HeaderComponent,
     FooterComponent,
     ContactUsComponent,
     MapComponent,
@@ -51,7 +53,8 @@ import {SwiperModule} from 'swiper/angular';
     ProductsComponent,
     ProductsFormComponent,
     ContactListComponent,
-    ContactDetailsComponent
+    ContactDetailsComponent,
+    ConfigsComponent
   ],
     imports: [
         CommonModule,
@@ -83,6 +86,7 @@ import {SwiperModule} from 'swiper/angular';
     ContactUsService,
     FileService,
     SnackbarService,
+    ConfigsService
   ]
 })
 export class GuestModule {

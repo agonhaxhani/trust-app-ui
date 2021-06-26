@@ -1,0 +1,20 @@
+<div class="configs">
+  <p class="title">Konfigurimet e aplikacionit</p>
+
+  <div class="image mt-4" *ngIf="filePath">
+    <i (click)="removeFile()" class="material-icons">close</i>
+    <img [src]="filePath" height="200">
+  </div>
+
+  <div class="file-uploader-plc">
+    <label class="file-uploader" for="fileUploader">Add Photo</label>
+    <input [multiple]="true" (change)="onSelectFile($event)" accept="image/jpeg,image/jpg,image/png" id="fileUploader" hidden type='file'>
+  </div>
+
+  <mat-form-field class="textarea">
+    <mat-label>Teksti</mat-label>
+    <textarea value="{{aboutUs}}" (change)="textChanged($event)" matInput placeholder="Teksti..."></textarea>
+  </mat-form-field>
+
+  <app-button-spinner text="Ruaj" color="primary" (click)="saveData()" [loading]="loading"></app-button-spinner>
+</div>

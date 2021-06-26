@@ -11,6 +11,7 @@ import {ProductDetailsComponent} from '../../product-details/product-details.com
 import {ProductsFormComponent} from './products-form/products-form.component';
 import {ContactListComponent} from './contact-list/contact-list.component';
 import {ContactDetailsComponent} from './contact-details/contact-details.component';
+import {ConfigsComponent} from './configs/configs.component';
 
 const routes: Routes = [
   {
@@ -57,6 +58,10 @@ const routes: Routes = [
       {
         path: 'contact-list',
         component: ContactListComponent
+      },
+      {
+        path: 'configs',
+        component: ConfigsComponent
       },
       {
         path: 'contact-details/:id',

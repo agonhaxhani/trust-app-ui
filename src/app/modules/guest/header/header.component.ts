@@ -6,11 +6,11 @@ import {TokenService} from '../../../shared/services/auth/token.service';
 import {SnackbarService} from '../../../shared/services/snackbar.service';
 
 @Component({
-  selector: 'app-header-not-logged',
-  templateUrl: './header-not-logged.component.html',
-  styleUrls: ['./header-not-logged.component.scss']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
-export class HeaderNotLogged implements OnInit {
+export class HeaderComponent implements OnInit {
   logoUrl = IMAGEURLS.LOGO;
   avatarUrl = IMAGEURLS.AVATAR;
   user: any;

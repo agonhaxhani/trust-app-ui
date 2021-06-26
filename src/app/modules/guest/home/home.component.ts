@@ -1,7 +1,8 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { ProductModel } from 'src/app/shared/models/product/product.model';
+import { Component, OnInit } from '@angular/core';
 import {ProductService} from '../../../shared/services/product.service';
-import {RequestUrls} from '../../../shared/constants/RequestUrls';
+import {ConfigsService} from '../../../shared/services/configs.service';
+import {ConfigsModel} from '../../../shared/models/shared/Configs.model';
+import {finalize} from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -12,19 +13,25 @@ export class HomeComponent implements OnInit {
   rentProducts = [];
   sellingProducts = [];
   cellsToShow = 0;
+  configs: ConfigsModel;
+  loading = true;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,
+              private configsService: ConfigsService) { }
 
   ngOnInit(): void {
     this.getSellingProducts();
     this.getRentProducts();
     this.changeSliderItemsnr();
+    this.getConfigs();
   }
 
   getRentProducts() {
-    const filters = `&_where[0][type]=QIRA`;
+    const filters = `&_where[0][type]=QIRA&_where[1][done]=false`;
 
-    this.productService.getProducts(filters).subscribe(
+    this.productService.getProducts(filters)
+      .pipe(finalize(() => this.loading = false))
+      .subscribe(
       result => {
         this.rentProducts = result;
       }
@@ -32,11 +39,21 @@ export class HomeComponent implements OnInit {
   }
 
   getSellingProducts() {
-    const filters = `&_where[0][type]=SHITJE`;
+    const filters = `&_where[0][type]=SHITJE&_where[1][done]=false`;
 
-    this.productService.getProducts(filters).subscribe(
+    this.productService.getProducts(filters)
+      .pipe(finalize(() => this.loading = false))
+      .subscribe(
       result => {
         this.sellingProducts = result;
+      }
+    );
+  }
+
+  getConfigs() {
+    this.configsService.getConfigs().subscribe(
+      result => {
+        this.configs = result;
       }
     );
   }

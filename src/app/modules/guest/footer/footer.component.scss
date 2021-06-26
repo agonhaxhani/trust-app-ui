@@ -12,10 +12,10 @@ p {
 .footer {
   position: relative;
   width: 100%;
-  background-image:url("/assets/images/map-1-min.png");
+  background-image:url("https://ar-prishtine.s3.eu-central-1.amazonaws.com/map_1_min_fb8f2df5a5.png?635204.9000000004");
   background-position: center;
-  background-size: COVER;
-  background-repeat: no-repeat;
+  background-size: cover;
+  background-repeat: repeat-x;
 
   .top {
     display: flex;

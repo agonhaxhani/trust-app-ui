@@ -60,12 +60,12 @@
         <div class="two-inputs">
           <mat-form-field class="example-full-width">
             <mat-label>Nr i Banjove</mat-label>
-            <input formControlName="bathroomNr" matInput placeholder="Nr i Banjove">
+            <input formControlName="bathroomNr" type="number" matInput placeholder="Nr i Banjove">
           </mat-form-field>
 
           <mat-form-field class="example-full-width">
             <mat-label>Nr i Ballkoneve</mat-label>
-            <input formControlName="balconyNr" matInput placeholder="Nr i Ballkoneve">
+            <input formControlName="balconyNr" type="number" matInput placeholder="Nr i Ballkoneve">
           </mat-form-field>
         </div>
 
@@ -76,8 +76,15 @@
           </mat-form-field>
 
           <div class="d-flex parking">
-            <label>Parking</label>
-            <mat-checkbox style="padding: 4px" label="Parking" formControlName="parking"></mat-checkbox>
+            <div style="width: 100%">
+              <label>Parking</label>
+              <mat-checkbox style="padding: 4px" label="Parking" formControlName="parking"></mat-checkbox>
+            </div>
+
+            <div style="width: 100%">
+              <label>Perfunduar (Shitja/Qeraja)</label>
+              <mat-checkbox style="padding: 4px" label="Perfunduar(Shitja/Qeraja)" formControlName="done"></mat-checkbox>
+            </div>
           </div>
         </div>
 

@@ -52,6 +52,7 @@ export class ProductsFormComponent implements OnInit, AfterViewInit {
       bathroomNr: new FormControl(this.productToSave ? this.productToSave.bathroomNr : '', Validators.required),
       storageNr: new FormControl(this.productToSave ? this.productToSave.storageNr : '', Validators.required),
       parking: new FormControl(this.productToSave ? this.productToSave.parking : '', Validators.required),
+      done: new FormControl(this.productToSave ? this.productToSave.done : '', Validators.required),
       description: new FormControl(this.productToSave ? this.productToSave.description : ''),
     });
   }
@@ -119,6 +120,7 @@ export class ProductsFormComponent implements OnInit, AfterViewInit {
       bathroomNr: value.bathroomNr,
       storageNr: value.storageNr,
       parking: value.parking,
+      done: value.done,
       productLatitude: this.productLatitude,
       productLongitude: this.productLongitude,
       product_files: this.productFiles

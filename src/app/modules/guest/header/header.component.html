@@ -14,10 +14,11 @@
       <a routerLink="/product/list">Produktet</a>
       <a routerLink="/contact-us">Kontakti</a>
       <a routerLink="/about-us">Rreth Nesh</a>
-      <a *ngIf="user" routerLink="/contact-list">Lista e Kontakteve</a>
 
       <button color="primary" *ngIf="user" mat-raised-button [matMenuTriggerFor]="menu">Admin</button>
       <mat-menu #menu="matMenu">
+        <button routerLink="/contact-list" mat-menu-item>Lista e Kontakteve</button>
+        <button routerLink="/configs" mat-menu-item>Konfigurime</button>
         <button mat-menu-item (click)="logOut()">Log Out</button>
       </mat-menu>
     </div>
