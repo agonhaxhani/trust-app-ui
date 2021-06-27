@@ -51,7 +51,13 @@ export class HomeComponent implements OnInit {
   }
 
   getConfigs() {
-    this.configs = this.configsService.getConfigFromLocalStorage();
+    this.configsService.configsObservable.subscribe(
+      result => {
+        if (result) {
+          this.configs = result;
+        }
+      }
+    );
   }
 
   changeSliderItemsnr() {

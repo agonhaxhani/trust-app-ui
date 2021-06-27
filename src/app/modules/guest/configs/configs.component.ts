@@ -75,7 +75,7 @@ export class ConfigsComponent implements OnInit {
       .pipe(finalize(() => this.loading = false))
       .subscribe(
         result1 => {
-          this.configsService.saveConfigsToStorage(result1);
+          this.configsService.saveConfigsToSubject(result1);
           this.snackBarService.success('Konfigurimet u ruajten');
         },
         error1 => this.snackBarService.error('Problem gjate ruajtjes se konfigurimeve')
