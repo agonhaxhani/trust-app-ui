@@ -51,8 +51,8 @@ export class ProductsFormComponent implements OnInit, AfterViewInit {
       balconyNr: new FormControl(this.productToSave ? this.productToSave.balconyNr : ''),
       bathroomNr: new FormControl(this.productToSave ? this.productToSave.bathroomNr : ''),
       storageNr: new FormControl(this.productToSave ? this.productToSave.storageNr : ''),
-      parking: new FormControl(this.productToSave ? this.productToSave.parking : ''),
-      done: new FormControl(this.productToSave ? this.productToSave.done : ''),
+      parking: new FormControl(this.productToSave ? this.productToSave.parking : false),
+      done: new FormControl(this.productToSave ? this.productToSave.done : false),
       description: new FormControl(this.productToSave ? this.productToSave.description : ''),
     });
   }
@@ -106,18 +106,21 @@ export class ProductsFormComponent implements OnInit, AfterViewInit {
   }
 
   formSubmit() {
+    if (!this.formGroup.valid) {
+      return;
+    }
     const value = this.formGroup.value;
 
     this.productToSave = {
       title: value.title.toString(),
       type: value.type.toString(),
-      m2: value.m2.toString(),
-      price: value.price ? value.price : '',
+      m2: value.m2 ? value.m2 : '',
+      price: value.price ? value.price : 0,
       rooms: value.roomsNr ? value.roomsNr.toString() : '',
       description: value.description,
       address: value.address,
-      balconyNr: value.balconyNr,
-      bathroomNr: value.bathroomNr,
+      balconyNr: value.balconyNr ? value.balconyNr : 0,
+      bathroomNr: value.bathroomNr ? value.bathroomNr : 0,
       storageNr: value.storageNr,
       parking: value.parking,
       done: value.done,
