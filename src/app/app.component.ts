@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   getConfigs() {
     this.configsService.getConfigs().subscribe(
       result => {
-        this.configsService.saveConfigsToStorage(result);
+        this.configsService.saveConfigsToSubject(result);
       },
       error => {
         this.configsService.saveDefaultConfigs();
