@@ -15,7 +15,7 @@
       <mat-spinner color="accent"></mat-spinner>
     </div>
 
-    <div *ngIf="!products || !products.length" class="no-product">
+    <div *ngIf="!products || !products.length && !loading" class="no-product">
       <p>Per momentin nuk kemi produkte</p>
     </div>
   </div>

@@ -2,7 +2,7 @@ import {environment} from '../../../environments/environment';
 
 export const GeneralConstant = {
   LOCALSTORAGE_TOKEN: 'token',
-  LOCALSTORAGE_BORROWED_BOOK: 'borrowed_book',
+  LOCALSTORAGE_CONFIGS: 'configs',
 };
 
 export const IMAGEURLS = {

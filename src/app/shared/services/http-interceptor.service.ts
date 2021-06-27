@@ -28,7 +28,7 @@ export class HttpInterceptorService implements HttpInterceptor {
             return;
           }
           localStorage.clear();
-          this.router.navigateByUrl(RouterUrls.GUEST.BASE_MODULE);
+          this.router.navigateByUrl('');
           this.snackBarService.info('Per shkak te sigurise, duhet qe te kyqeni prap')
         }
       }));

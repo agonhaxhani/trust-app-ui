@@ -29,10 +29,6 @@ export class AboutUsComponent {
   }
 
   getConfigs() {
-    this.configsService.getConfigs().subscribe(
-      result => {
-        this.configs = result;
-      }
-    );
+    this.configs = this.configsService.getConfigFromLocalStorage();
   }
 }

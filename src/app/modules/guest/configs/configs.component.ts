@@ -32,6 +32,11 @@ export class ConfigsComponent implements OnInit {
   }
 
   onSelectFile(event) {
+    if (event.target.files[0].size > 1000000) {
+      this.snackBarService.error('Nuk lejohet te upload-ohen fotot me te medha se 1MB');
+      return;
+    }
+
     this.fileToSave = event.target.files[0];
 
     const reader = new FileReader();
@@ -69,7 +74,10 @@ export class ConfigsComponent implements OnInit {
     this.configsService.saveToDb(configsToSave)
       .pipe(finalize(() => this.loading = false))
       .subscribe(
-        result1 => this.snackBarService.success('Konfigurimet u ruajten'),
+        result1 => {
+          this.configsService.saveConfigsToStorage(result1);
+          this.snackBarService.success('Konfigurimet u ruajten');
+        },
         error1 => this.snackBarService.error('Problem gjate ruajtjes se konfigurimeve')
       );
   }
