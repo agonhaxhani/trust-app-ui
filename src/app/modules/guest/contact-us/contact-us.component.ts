@@ -1,9 +1,6 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import {HttpClient} from '@angular/common/http';
 import {ContactUsService} from '../../../shared/services/contact-us.service';
-import {NavigationStart, Router} from '@angular/router';
-import {SnackbarService} from '../../../shared/services/snackbar.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -13,9 +10,10 @@ import {SnackbarService} from '../../../shared/services/snackbar.service';
 export class ContactUsComponent implements OnInit {
   formGroup: FormGroup;
   window = window;
+  formSubmitted = false;
+  responseSuccess = undefined;
 
-  constructor(private contactUsService: ContactUsService,
-              private snackbarService: SnackbarService) { }
+  constructor(private contactUsService: ContactUsService) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -24,7 +22,7 @@ export class ContactUsComponent implements OnInit {
   initForm() {
     this.formGroup = new FormGroup({
       full_name: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('', Validators.required),
       message: new FormControl('', Validators.required),
     });
@@ -35,23 +33,20 @@ export class ContactUsComponent implements OnInit {
       return;
     }
 
+    this.formSubmitted = true;
+
     const value = this.formGroup.value;
 
     this.contactUsService.createContact(value).subscribe(
       result => {
-        this.snackbarService.infoSnackBar("Kontakti eshte ruajtur me sukses");
         this.initForm();
+        setTimeout(() => this.responseSuccess = true, 1500);
       },
       error => {
-        this.snackbarService.infoSnackBar("Gabim gjate ruajtjes se kontaktit");
+        setTimeout(() => this.responseSuccess = false, 1500);
+        this.initForm();
       }
     )
-
-    //
-    // this.contactUsService.submitForm(url, objectToSend).subscribe(
-    //   result => console.log(result),
-    //   error => console.log(error)
-    // );
   }
 
 }

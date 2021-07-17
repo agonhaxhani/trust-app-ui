@@ -10,7 +10,7 @@
             </span>
         </div>
 
-        <form class="contact100-form" *ngIf="formGroup" (submit)="onSubmit()" [formGroup]="formGroup">
+        <form class="contact100-form" *ngIf="formGroup && !formSubmitted" (submit)="onSubmit()" [formGroup]="formGroup">
                 <mat-form-field>
                     <mat-label>Emri dhe mbiemri</mat-label>
                     <input matInput formControlName="full_name" placeholder="Emri dhe mbiemri">
@@ -43,6 +43,36 @@
                 </button>
             </div>
         </form>
+
+      <div class="checkmarks" *ngIf="formSubmitted">
+        <p *ngIf="responseSuccess == undefined">Në Procesim</p>
+        <svg version="1.1" *ngIf="responseSuccess == undefined" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+          <circle class="path circle circle-infinite" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+          <p>Duke u procesuar</p>
+        </svg>
+
+        <p *ngIf="responseSuccess == true">Kontakti përfundoj me sukses, ne do t'iu kontaktojmë sa më shpejtë të jetë e mundur!</p>
+        <svg version="1.1" *ngIf="responseSuccess == true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+          <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+          <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
+        </svg>
+
+        <p *ngIf="responseSuccess == false">Gabim gjatë procesimit, ju lutem provoni prap!</p>
+        <svg version="1.1" *ngIf="responseSuccess == false"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+          <circle class="path circle" fill="none" stroke="#D06079" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+          <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3"/>
+          <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="95.8" y1="38" x2="34.4" y2="92.2"/>
+        </svg>
+
+        <div class="contact-again">
+          <button *ngIf="responseSuccess === true || responseSuccess === false" type="button"
+                  (click)="responseSuccess = undefined; formSubmitted = false"
+                  mat-raised-button color="primary" class="contact100-form-btn">
+            <span>Kontakto prap</span>
+          </button>
+        </div>
+      </div>
+
     </div>
 
 <app-map></app-map>
