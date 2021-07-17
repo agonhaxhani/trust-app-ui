@@ -25,17 +25,17 @@
 
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td [ngClass]="element.seen ? 'seen' : ''" mat-cell *matCellDef="let element" (click)="goToDetails(element.id)"> {{element.full_name}} </td>
+        <td class='pointer' [ngClass]="element.seen ? 'seen' : ''" mat-cell *matCellDef="let element" (click)="goToDetails(element.id)"> {{element.full_name}} </td>
       </ng-container>
 
       <ng-container matColumnDef="email">
         <th mat-header-cell *matHeaderCellDef> Email </th>
-        <td [ngClass]="element.seen ? 'seen' : ''" mat-cell *matCellDef="let element" (click)="goToDetails(element.id)"> {{element.email}} </td>
+        <td class='pointer' [ngClass]="element.seen ? 'seen' : ''" mat-cell *matCellDef="let element" (click)="goToDetails(element.id)"> {{element.email}} </td>
       </ng-container>
 
       <ng-container matColumnDef="phone">
         <th mat-header-cell *matHeaderCellDef> Phone </th>
-        <td [ngClass]="element.seen ? 'seen' : ''" mat-cell *matCellDef="let element" (click)="goToDetails(element.id)"> {{element.phone}} </td>
+        <td class='pointer' [ngClass]="element.seen ? 'seen' : ''" mat-cell *matCellDef="let element" (click)="goToDetails(element.id)"> {{element.phone}} </td>
       </ng-container>
 
       <ng-container matColumnDef="delete">

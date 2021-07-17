@@ -38,3 +38,10 @@ mat-icon.seen {
 mat-icon.unseen {
   color: red;
 }
+
+.pointer {
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
